@@ -12,9 +12,11 @@ Example 2:
 
 Input: ["H","a","n","n","a","h"]
 Output: ["h","a","n","n","a","H"]
+
+https://www.geeksforgeeks.org/reverse-string-python-5-different-ways/
 """
 class Solution:
-    def reverseString(self, s) -> None:
+    def reverseString(self, s, i=0) -> None:
         """
         Do not return anything, modify s in-place instead.
         """
@@ -22,18 +24,25 @@ class Solution:
         # swap the items in the pointers and 
         # move the pointers towards each other
 
-        start = 0
-        end = len(s) - 1
-        print(s)
-        while start != end:
-            print("start",s[start])
-            print(s[end])
-            s[start], s[end] = s[end], s[start]
-            start += 1
-            end -= 1
-            print(s)
+        # start = 0
+        # end = len(s) - 1
+        # print(s)
+        # while start <= end:
+        #     s[start], s[end] = s[end], s[start]
+        #     start += 1
+        #     end -= 1
+        # print(s)
+
+        # RECURSIVE , additinal argument i=0
+        if i < len(s) // 2:
+            s[i], s[-i-1] = s[-i-1], s[i]
+            print("0", s[0])
+            print("-i-1",s[-i-1])
+
+            self.reverseString(s, i + 1)
 
 
 
 sol = Solution()
 print(sol.reverseString(["h", "e", "l", "l", "o"]))
+# print(sol.reverseString(["H", "a", "n", "n", "a", "h"]))
