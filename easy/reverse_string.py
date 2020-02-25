@@ -14,10 +14,26 @@ Input: ["H","a","n","n","a","h"]
 Output: ["h","a","n","n","a","H"]
 """
 class Solution:
-    def reverseString(self, s=[str]) -> None:
+    def reverseString(self, s) -> None:
         """
         Do not return anything, modify s in-place instead.
         """
         # set two pointers from the end and the beginning of the arr
         # swap the items in the pointers and 
         # move the pointers towards each other
+
+        start = 0
+        end = len(s) - 1
+        print(s)
+        while start != end:
+            print("start",s[start])
+            print(s[end])
+            s[start], s[end] = s[end], s[start]
+            start += 1
+            end -= 1
+            print(s)
+
+
+
+sol = Solution()
+print(sol.reverseString(["h", "e", "l", "l", "o"]))
