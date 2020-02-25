@@ -18,3 +18,6 @@ class Solution:
         """
         Do not return anything, modify s in-place instead.
         """
+        # set two pointers from the end and the beginning of the arr
+        # swap the items in the pointers and 
+        # move the pointers towards each other
