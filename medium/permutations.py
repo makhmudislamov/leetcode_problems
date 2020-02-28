@@ -13,6 +13,9 @@ Output:
   [3,1,2],
   [3,2,1]
 ]
+
+Ask if there will be a duplicate element in the array?
+Time complexity and space complexity O(n!)
 """
 
 
