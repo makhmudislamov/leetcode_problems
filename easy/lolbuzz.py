@@ -27,7 +27,23 @@ Return:
 ]
 """
 
-
 class Solution:
     def fizzBuzz(self, n: int) -> [str]:
-        pass
+        fizzy_array = []
+        num = 1
+        while num < n + 1:
+            if num % 3 == 0 and num % 5 == 0:
+                fizzy_array.append("FizzBuzz")
+            elif num % 3 == 0:
+                fizzy_array.append("Fizz")
+            elif num % 5 == 0:
+                fizzy_array.append("Buzz")
+            else:
+                fizzy_array.append(str(num))
+            num += 1
+
+        return fizzy_array
+
+n = 15
+s = Solution()
+print(s.fizzBuzz(n))
