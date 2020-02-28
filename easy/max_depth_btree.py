@@ -13,6 +13,8 @@ Given binary tree [3, 9, 20, null, null, 15, 7],
     /  \
    15   7
 return its depth = 3
+
+Explanation in LeetCode : https://leetcode.com/explore/learn/card/data-structure-tree/17/solve-problems-recursively/534/ 
 """
 
 # Definition for a binary tree node.
@@ -25,4 +27,17 @@ class TreeNode:
 
 class Solution:
     def maxDepth(self, root: TreeNode) -> int:
-        pass
+        # TOP DOWN SOLUTION - pre-prder traversal
+        # base case
+        if root == None:
+            return 0
+        
+        # call the function recursively
+        # for left and right children
+        left = self.maxDepth(root.left)
+        right = self.maxDepth(root.right)
+        # returning max of left and right children depth, +1 is adding the depth of the root
+        return max(left, right) + 1
+
+        # Runtime O(N) - since we are going throught the whole tree
+        
