@@ -23,7 +23,10 @@ class Solution:
         # if count of the item is greater than n/2
         # return the item
         # APPOACH1
-        # half_of_len = len(nums) // 2        
+        half_of_len = len(nums) // 2
+        if len(nums) % 2 != 0:
+            half_of_len += 1
+        print(half_of_len)       
         # for num in nums:
         #     if nums.count(num) > half_of_len:
         #         return num
@@ -34,5 +37,24 @@ class Solution:
         # iterate over the dict
         # return the key with max value
 
-        pass
+        occurances = {}
+        counter = 0
+        for num in nums:
+            if not occurances.get(num):
+                occurances[num] = 1
+            else:
+                occurances[num] += 1
         
+        for num, occurance in occurances.items():
+            print(num, occurance)
+            if occurance < half_of_len:
+                continue
+            else:
+                return num
+
+# nums = [2, 2, 1, 1, 1, 2, 2,2,2,2,2,2]
+# nums = [3, 2, 3]
+nums = [8,8,7,7,7]
+
+s = Solution()
+print(s.majorityElement(nums))
