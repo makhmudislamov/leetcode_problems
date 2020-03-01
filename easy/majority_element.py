@@ -20,5 +20,8 @@ class Solution:
         # iterate over the array
         # if count of the item is greater than n/2
         # return the item
-
-        pass
+        half_of_len = len(nums) // 2
+        
+        for num in nums:
+            if nums.count(num) > half_of_len:
+                return num
