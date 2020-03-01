@@ -15,13 +15,14 @@ class ListNode:
         self.next = None
 
 
+
+
 class Solution:
     def reverseList(self, head: ListNode) -> ListNode:
-        # iterate over the ll until we reach NULL
-        # from there start to change the pointer to previous node
-        # no swapping here
-        current_node = head
-        while current_node != None:
-            print(current_node.val)
-            current_node = current_node.next
-        # pass
+        # declare a variable to point to previous Node
+        # iterate over the LL until head reaches None(tail)
+            # declare a variable that points to next Node
+            # point head to previous Node
+            # bring previous Node pointer to head
+            # move the head pointer to next Node (to move the iteration)
+        pass
