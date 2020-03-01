@@ -37,20 +37,24 @@ class Solution:
         # iterate over the dict
         # return the key with max value
 
-        occurances = {}
-        counter = 0
-        for num in nums:
-            if not occurances.get(num):
-                occurances[num] = 1
-            else:
-                occurances[num] += 1
+        # occurances = {}
+        # counter = 0
+        # for num in nums:
+        #     if not occurances.get(num):
+        #         occurances[num] = 1
+        #     else:
+        #         occurances[num] += 1
         
-        for num, occurance in occurances.items():
-            print(num, occurance)
-            if occurance < half_of_len:
-                continue
-            else:
-                return num
+        # for num, occurance in occurances.items():
+        #     print(num, occurance)
+        #     if occurance < half_of_len:
+        #         continue
+        #     else:
+        #         return num
+
+        # APPROACH 3
+        num = max(set(nums), key=nums.count)
+        return num
 
 # nums = [2, 2, 1, 1, 1, 2, 2,2,2,2,2,2]
 # nums = [3, 2, 3]
