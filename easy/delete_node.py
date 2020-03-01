@@ -41,3 +41,11 @@ class Solution:
         node.val = node.next.val
         node.next = node.next.next
 
+        # another version. here just cheking if skipped node points to tail
+        while node.next != None:
+            node.val = node.next.val
+            if node.next.next == None:
+                node.next = None
+            else:
+                node = node.next
+
