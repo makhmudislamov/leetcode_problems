@@ -15,5 +15,10 @@ Output: 2
 
 
 class Solution:
-    def majorityElement(self, nums: List[int]) -> int:
+    def majorityElement(self, nums: [int]) -> int:
+        # find n/2 to compare
+        # iterate over the array
+        # if count of the item is greater than n/2
+        # return the item
+
         pass
