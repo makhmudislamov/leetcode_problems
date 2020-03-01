@@ -36,6 +36,8 @@ class Solution:
         :type node: ListNode
         :rtype: void Do not return anything, modify node in-place instead.
         """
-    # point node's value to next node's value
-    # skip the next node
+        # point node's value to next node's value
+        # skip the next node
+        node.val = node.next.val
+        node.next = node.next.next
 
