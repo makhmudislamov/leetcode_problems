@@ -11,6 +11,8 @@ Output: 3
 Example 2:
 Input: [2,2,1,1,1,2,2]
 Output: 2
+
+Question to ask - is there only one element that appears more than n/2?
 """
 
 
@@ -20,8 +22,17 @@ class Solution:
         # iterate over the array
         # if count of the item is greater than n/2
         # return the item
-        half_of_len = len(nums) // 2
+        # APPOACH1
+        # half_of_len = len(nums) // 2        
+        # for num in nums:
+        #     if nums.count(num) > half_of_len:
+        #         return num
+        # APPROACH 2
+        # empty dictionary
+        # iterate over the nums
+        # fill the dict key: num, value: appearances
+        # iterate over the dict
+        # return the key with max value
+
+        pass
         
-        for num in nums:
-            if nums.count(num) > half_of_len:
-                return num
