@@ -26,6 +26,17 @@ class Solution:
                 # print(i)
         # return nums
 
+        # another approach
+        # int low = 0;
+        # int high = 0;
+        # while(high < nums.length){
+        #     if(nums[high] == 0){
+        #         high++;}else if(low == high){
+        #         low++;
+        #         high++; }else if(nums[high] > 0 | | nums[high]  < 0){
+        #         nums[low++] = nums[high];
+        #         nums[high++] = 0;
+
 
             
 
