@@ -27,15 +27,15 @@ class Solution:
             # bring previous Node pointer to head
             # move the head pointer to next Node (to move the iteration)
         # return previous Node
-        if not head:
-            return None 
-        previous_node = None
-        while head != None:
-            next_node = head.next
-            head.next = previous_node
-            previous_node = head
-            head = next_node
-        return previous_node
+        # if not head:
+        #     return None 
+        # previous_node = None
+        # while head != None:
+        #     next_node = head.next
+        #     head.next = previous_node
+        #     previous_node = head
+        #     head = next_node
+        # return previous_node
 
         # RECURSIVE 
         # declare a helper function that takes two ars: previous (None) and current (head) Nodes
@@ -47,3 +47,14 @@ class Solution:
             # bring current node pointer to next Node
 
         # call the function recursively
+        def recursive_reverse(previous = None, current = head):
+            if not current:
+                return previous
+
+            next_node = current.next
+            current.next = previous
+            previous = current
+            current = next_node
+            return recursive_reverse(previous, current)
+        
+        return recursive_reverse()
