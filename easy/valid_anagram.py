@@ -13,9 +13,15 @@ You may assume the string contains only lowercase alphabets.
 
 Follow up:
 What if the inputs contain unicode characters? How would you adapt your solution to such case?
+
+Questions to ask. space between the letters? 
 """
 
 
 class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
-        pass
+        for char in s:
+            if char not in s:
+                return False
+            return True
+
