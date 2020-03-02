@@ -16,9 +16,25 @@ Example 3:
 
 Input: [1,1,1,3,3,4,3,2,4,2]
 Output: true
+
+questions to ask. is it sorted
 """
 
 
 class Solution:
-    def containsDuplicate(self, nums: List[int]) -> bool:
-        pass
+    def containsDuplicate(self, nums: [int]) -> bool:
+        # APROACH 1
+        # empty dict
+
+        # iterate over the list
+        # add item to dict
+        # if the item is already in the dict
+        # return false
+        dupl = {}
+
+        for num in nums:
+            if not dupl.get(num):
+                dupl[num] = 1
+            else:
+                return False
+        return True
