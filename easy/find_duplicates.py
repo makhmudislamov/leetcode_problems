@@ -23,18 +23,46 @@ questions to ask. is it sorted
 
 class Solution:
     def containsDuplicate(self, nums: [int]) -> bool:
-        # APROACH 1
+        # APROACH 1 - has bugs
         # empty dict
 
         # iterate over the list
         # add item to dict
         # if the item is already in the dict
         # return false
-        dupl = {}
+        
+        # base case
+        if len(nums) == 1 or len(nums) == 0:
+            return False
+        # dupl = {}
+        # for num in nums:
+        #     if not dupl.get(num):
+        #         dupl[num] = 1
+        #     else:
+        #         return False
+        # print(dupl)
+        # return True
 
-        for num in nums:
-            if not dupl.get(num):
-                dupl[num] = 1
-            else:
-                return False
-        return True
+        # APPROACH 2 - has bugs
+        # start = 0
+        # end = len(nums) - 1
+
+        # while start < end or end > start:
+        #     if nums[start] == nums[end]:
+        #         return True
+        #     return False
+
+        # another approach - best solution
+        # if nums.count(0) > 1:
+        #     return True
+        # return sum(set(nums)) != sum(nums)
+
+        # even better solution
+        return len(set(nums)) != len(nums)
+
+
+
+
+nums = [1, 2, 3, 0, 0]
+s = Solution()
+print(s.containsDuplicate(nums))
