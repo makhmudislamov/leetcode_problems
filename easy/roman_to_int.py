@@ -49,4 +49,8 @@ Explanation: M = 1000, CM = 900, XC = 90 and IV = 4.
 
 class Solution:
     def romanToInt(self, s: str) -> int:
+        # declare a global dict with roman nums and ints
+        # declare output int and set to zero
+        # iterate over the input from the left add the value to output int
+        # include six instances and substract when needed
         pass
