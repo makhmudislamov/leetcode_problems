@@ -62,9 +62,11 @@ class Solution:
         # declare output int and set to zero
         # iterate over the input from the left add the value to output int
         # include six instances and substract when needed
+        output = 0
         for char in s:
-           int_value =  ROMAN_VALUES.get(char)
-           print(int_value)
+            int_value =  ROMAN_VALUES.get(char)
+            output += int_value
+        return output
         
 
 
