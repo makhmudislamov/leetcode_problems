@@ -46,6 +46,15 @@ Output: 1994
 Explanation: M = 1000, CM = 900, XC = 90 and IV = 4.
 """
 
+ROMAN_VALUES = {
+    "I": 1,
+    "V": 5,
+    "X": 10,
+    "L": 50,
+    "C": 100,
+    "D": 500,
+    "M": 1000
+}
 
 class Solution:
     def romanToInt(self, s: str) -> int:
@@ -53,4 +62,13 @@ class Solution:
         # declare output int and set to zero
         # iterate over the input from the left add the value to output int
         # include six instances and substract when needed
-        pass
+        for char in s:
+           int_value =  ROMAN_VALUES.get(char)
+           print(int_value)
+        
+
+
+s = "LVIII"
+
+sol = Solution()
+print(sol.romanToInt(s))
