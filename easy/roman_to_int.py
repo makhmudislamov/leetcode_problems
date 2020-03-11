@@ -66,11 +66,13 @@ class Solution:
         for char in s:
             int_value =  ROMAN_VALUES.get(char)
             output += int_value
+            if char == "I":
+                output -= int_value
+                
         return output
         
 
-
-s = "LVIII"
+s = "IV"
 
 sol = Solution()
 print(sol.romanToInt(s))
