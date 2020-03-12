@@ -30,5 +30,36 @@ Output: true
 """
 
 
-def isValid(self, s: str) -> bool:
+def isValid(s: str):
     pass
+
+    # declare all the parenthesis
+    parenthesis = {
+        "(" : ")",
+        "[" : "]",
+        "{" : "}"
+    }
+
+    if len(s) % 2 != 0:
+        return False
+
+    stack = []
+
+    for par in s:
+        if par in parenthesis:
+            stack.append(parenthesis[par])
+        else:
+            if len(stack) == 0:
+                return False
+            current_pop = stack.pop()
+            if current_pop != par:
+                return False
+        
+    
+    if not stack:
+        return True
+    return False
+
+s = '()'
+
+print(isValid(s))
