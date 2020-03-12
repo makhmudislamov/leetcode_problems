@@ -19,11 +19,12 @@ def isPalindrome(s: str):
     s = s.translate(s.maketrans('', '', string.punctuation))
     s=s.replace(" ", "")
     
+
     if s == s[::-1]:
         return True
     return False
 
 
-# s = "A man, a plan, a canal: Panama"
-s = "race a car"
+s = "A man, a plan, a canal: Panama"
+# s = "race a car"
 print(isPalindrome(s))

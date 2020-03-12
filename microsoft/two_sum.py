@@ -18,7 +18,7 @@ Questions to ask:
 
 
 def twoSum(nums: [int], target: int):
-
+    # FOR SORTED ARRAY
     # start = 0
     # end = len(nums) - 1
     # while start <= end:
@@ -33,21 +33,34 @@ def twoSum(nums: [int], target: int):
 
     #     if nums[start] + nums[end] < target:
     #         start += 1
-    index1 = 0
-    index2 = index1 + 1
-    while index1 < len(nums):
-        while index2 < len(nums):
-            if nums[index1] + nums[index2] == target:
-                return [index1, index2]
-            else:
-                index2 += 1
-        index1 += 1
-        index2 = index1 + 1
+
+    # FOR UNSORTED ARRAY
+    # index1 = 0
+    # index2 = index1 + 1
+    # while index1 < len(nums):
+    #     while index2 < len(nums):
+    #         if nums[index1] + nums[index2] == target:
+    #             return [index1, index2]
+    #         else:
+    #             index2 += 1
+    #     index1 += 1
+    #     index2 = index1 + 1
+
+    # DICTIONARY METHOD
+
+    differences = {}
+    for index, value in enumerate(nums):
+        if not value in differences:
+            differences[target-value] = index
+        else:
+            return [differences[value], index]
+
+
+
 
         
     
 nums = [3, 2, 4]
-
 target = 6
 
 print(twoSum(nums, target))
