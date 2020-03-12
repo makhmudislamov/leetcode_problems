@@ -24,6 +24,6 @@ def isPalindrome(s: str):
     return False
 
 
-s = "A man, a plan, a canal: Panama"
+# s = "A man, a plan, a canal: Panama"
 s = "race a car"
 print(isPalindrome(s))

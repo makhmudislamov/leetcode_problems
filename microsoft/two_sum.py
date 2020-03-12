@@ -19,24 +19,35 @@ Questions to ask:
 
 def twoSum(nums: [int], target: int):
 
-    start = 0
-    end = len(nums) - 1
-
-    while start <= end:
+    # start = 0
+    # end = len(nums) - 1
+    # while start <= end:
+    #     print("start", nums[start])
+    #     print("end", nums[end])
         
-        if nums[start] + nums[end] == target:
-            return [nums[start], nums[end]]
+    #     if nums[start] + nums[end] == target:
+    #         return [start, end]
 
-        if nums[start] + nums[end] > target:
-            end -= 1
+    #     if nums[start] + nums[end] > target:
+    #         end -= 1
 
-        if nums[start] + nums[end] < target:
-            start += 1
+    #     if nums[start] + nums[end] < target:
+    #         start += 1
+    index1 = 0
+    index2 = index1 + 1
+    while index1 < len(nums):
+        while index2 < len(nums):
+            if nums[index1] + nums[index2] == target:
+                return [index1, index2]
+            else:
+                index2 += 1
+        index1 += 1
+        index2 = index1 + 1
+
+        
     
+nums = [3, 2, 4]
 
-
-
-nums = [2, 7, 11, 15]
-target = 9
+target = 6
 
 print(twoSum(nums, target))
