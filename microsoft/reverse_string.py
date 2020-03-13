@@ -28,4 +28,21 @@ You need to reduce multiple spaces between two words to a single space in the re
 
 
 def reverseWords(s: str) -> str:
-    pass
+    # first clean the input from trailing / in between extra spaces
+    # try to use join to save the words in a space
+    # iterate the list from backwards and append it to predecalred string
+    # print the string 
+    output = ""
+    # s.
+    s = s.split(" ")
+    for string in s[::-1]:
+        if len(string) != 0:
+            output += string + " "
+    return output.strip()
+            
+    
+
+
+# s = "  hello world!  "
+s = "a good   example"
+print(reverseWords(s))
