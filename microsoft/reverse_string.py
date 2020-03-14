@@ -32,14 +32,20 @@ def reverseWords(s: str) -> str:
     # try to use join to save the words in a space
     # iterate the list from backwards and append it to predecalred string
     # print the string 
-    output = ""
-    # s.
-    s = s.split(" ")
-    for string in s[::-1]:
-        if len(string) != 0:
-            output += string + " "
-    return output.strip()
+    # BRUTEFORCE
+    # output = ""
+    # s = s.split()
+ 
+    # for string in s[::-1]:
+    #     if len(string) != 0:
+    #         output += string + " "
+    # return output.strip()
+
+    # OPTIMIZATION
+    return " ".join(reversed(s.split()))
+        
             
+        
     
 
 
