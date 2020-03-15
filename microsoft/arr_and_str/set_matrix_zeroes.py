@@ -35,7 +35,6 @@ A simple improvement uses O(m + n) space, but still not the best solution.
 Could you devise a constant space solution?
 """
 
-import pprint
 def setZeroes(matrix):
     """
     :type matrix: List[List[int]]
@@ -53,18 +52,9 @@ def setZeroes(matrix):
     
             zero_found_row = [0] * len(zero_found_row)
 
-    # print("this again", zero_found_row)
+    print("this again", zero_found_row)
     
     return matrix
-
-# def display_matrix(matrix):
-
-#     for row in matrix:
-#         for item in row:
-#             print(str(item))
-#             if item == 0:
-                
-
 
 
 
@@ -76,5 +66,5 @@ matrix = [
     [1, 1, 1]
 ]
 
-# print(setZeroes(matrix))
-print(display_matrix(matrix))
+print(setZeroes(matrix))
+# print(display_matrix(matrix))
