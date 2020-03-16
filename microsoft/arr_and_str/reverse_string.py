@@ -16,9 +16,20 @@ Input: ["H","a","n","n","a","h"]
 Output: ["h","a","n","n","a","H"]
 """
 
-def reverseString(self, s):
+def reverseString(s):
     """
     :type s: List[str]
     :rtype: None Do not return anything, modify s in-place instead.
     """
-    pass
+    start = 0
+    end = len(s)-1
+
+    while start <= end :
+        s[start], s[end] = s[end], s[start]
+        start += 1
+        end -= 1
+    print(s)
+
+
+s = ["H", "a", "n", "n", "a", "h"]
+reverseString(s)
