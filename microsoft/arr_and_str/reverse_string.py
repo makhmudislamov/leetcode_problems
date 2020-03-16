@@ -1,54 +1,24 @@
 """
-Given an input string, reverse the string word by word.
+Write a function that reverses a string. The input string is given as an array of characters char[].
+Do not allocate extra space for another array, you must do this by modifying 
+the input array in-place with O(1) extra memory.
+You may assume all the characters consist of printable ascii characters.
 
  
 
 Example 1:
 
-Input: "the sky is blue"
-Output: "blue is sky the"
+Input: ["h","e","l","l","o"]
+Output: ["o","l","l","e","h"]
 Example 2:
 
-Input: "  hello world!  "
-Output: "world! hello"
-Explanation: Your reversed string should not contain leading or trailing spaces.
-Example 3:
-
-Input: "a good   example"
-Output: "example good a"
-Explanation: You need to reduce multiple spaces between two words to a single space in the reversed string.
- 
-
-Note:
-
-A word is defined as a sequence of non-space characters.
-Input string may contain leading or trailing spaces. However, your reversed string should not contain leading or trailing spaces.
-You need to reduce multiple spaces between two words to a single space in the reversed string.
+Input: ["H","a","n","n","a","h"]
+Output: ["h","a","n","n","a","H"]
 """
 
-
-def reverseWords(s: str) -> str:
-    # first clean the input from trailing / in between extra spaces
-    # try to use join to save the words in a space
-    # iterate the list from backwards and append it to predecalred string
-    # print the string 
-    # BRUTEFORCE
-    # output = ""
-    # s = s.split()
- 
-    # for string in s[::-1]:
-    #     if len(string) != 0:
-    #         output += string + " "
-    # return output.strip()
-
-    # OPTIMIZATION
-    return " ".join(reversed(s.split()))
-        
-            
-        
-    
-
-
-# s = "  hello world!  "
-s = "a good   example"
-print(reverseWords(s))
+def reverseString(self, s):
+    """
+    :type s: List[str]
+    :rtype: None Do not return anything, modify s in-place instead.
+    """
+    pass

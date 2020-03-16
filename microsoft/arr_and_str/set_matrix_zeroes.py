@@ -40,21 +40,8 @@ def setZeroes(matrix):
     :type matrix: List[List[int]]
     :rtype: None Do not return anything, modify matrix in-place instead.
     """
-    for row_inx, row_list in enumerate(matrix):
-        if 0 in row_list:
-   
-            # all_zero_row = matrix[row_inx]
-            zero_found_row = matrix[row_inx]
-            print("this" , zero_found_row)
-            set_to_zero = row_list.index(0)
-            for row_list in matrix:
-                row_list[set_to_zero] = 0
-    
-            zero_found_row = [0] * len(zero_found_row)
-
-    print("this again", zero_found_row)
-    
-    return matrix
+    for row in range(len(matrix)):
+        print(matrix[row][0])
 
 
 
