@@ -17,4 +17,13 @@ def longestPalindrome(s):
     :type s: str
     :rtype: str
     """
-    pass
+    # palindromes = {}
+
+    # set two pointers
+    # one stays at the start and another one starts moving toward the end
+    # after each move to right check if the current string is pal
+    # if so append to dictionary: pal, len
+    # at the end loop over the dictionary and return the string with the longest len
+    # if there is only on item in dict. return the item
+
+   
