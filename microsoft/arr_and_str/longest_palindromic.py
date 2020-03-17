@@ -17,31 +17,27 @@ def longestPalindrome(s):
     :type s: str
     :rtype: str
     """
-    # set two pointers
-    # one stays at the start and another one starts moving toward the end
-    # after each move to right check if the current string is pal
-    # if so append to dictionary: pal, len
-    # at the end loop over the dictionary and return the string with the longest len
-    # if there is only on item in dict. return the item
-    palindromes = {}
-    end = 1
-
-    while end < len(s):
-        current_string = s[:end+1]
-        # print(current_string[::-1])
-        if current_string == current_string[::-1]:
-            palindromes[current_string] = len(current_string)        
-        end += 1
-
-    max_len = max(palindromes.values())
-    for string, length in palindromes.items():
-        if length == max_len:
-            return string
-        
+    # expanding from center approach
+    # base cases if s==None or len() < 1 = " "
 
 
+    # helper func
+    # base cases
+    # two pointers start expanding from the target char of the input
+    # keep going: and check if the chars are the same (palindrome)
+    # if not return the len of last palindromic substring - right - left - 1
 
+    # declare start and end as 0
+    # loop over the input
+    # call helper function - initialize case1 ex: "racecar" - middle is one char (len is od)
+    # call helper function - initialize other ususal cases: "dabbak" - bb is in the middle
+    # keep the max len of two of the above
+    # if the max len is greater than (end-start)
+    # set new boundries for start and end
+    # start = curren index - ((max len - 1) / 2)
+    # end = cur index + (max len /2)
 
+    # return the substring of start and end indexes of input
 
 
 s = "babad"
