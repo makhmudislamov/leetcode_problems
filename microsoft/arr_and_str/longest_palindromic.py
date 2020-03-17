@@ -12,6 +12,24 @@ Input: "cbbd"
 Output: "bb"
 """
 
+# helper func
+# base cases
+# two pointers start expanding from the target char of the input
+# keep going: and check if the chars are the same (palindrome)
+# if not return the len of last palindromic substring - right - left - 1
+
+def expand_pointers(s, left, right):
+    if s is None or left > right:
+        return 0
+    
+    while left >=0 and right < len(s):
+        if s[left] == s[right]:
+            left -= 1
+            right += 1
+        else:   
+            return right - left - 1
+
+
 def longestPalindrome(s):
     """
     :type s: str
@@ -19,13 +37,6 @@ def longestPalindrome(s):
     """
     # expanding from center approach
     # base cases if s==None or len() < 1 = " "
-
-
-    # helper func
-    # base cases
-    # two pointers start expanding from the target char of the input
-    # keep going: and check if the chars are the same (palindrome)
-    # if not return the len of last palindromic substring - right - left - 1
 
     # declare start and end as 0
     # loop over the input
@@ -38,7 +49,9 @@ def longestPalindrome(s):
     # end = cur index + (max len /2)
 
     # return the substring of start and end indexes of input
+    pass
 
 
 s = "babad"
-print(longestPalindrome(s))
+# print(longestPalindrome(s))
+print(expand_pointers(s, 2, 2))
