@@ -42,17 +42,35 @@ def setZeroes(matrix):
     """
     # declaring height and width variables for iteration
     # initialize boolean (false)to mark if the first row should be filled with 0s
+    height = len(matrix)
+    width = len(matrix[0])
+    first_row_zero = False
 
     # iterate over the first row 
     # if it has 0 change the boolean to true
+
+    for cell in range(width):
+        if matrix[cell] == 0:
+            print(matrix[cell])
+            first_row_zero = True
+            print(first_row_zero)
 
     # iterate over each cell
     # if the cell contains 0
     # mark the corresponding index of first row as zero >> denotes the whole column as 0
 
+    for row in range(height):
+        for col in range(width):
+            print(matrix[row][col])
+            if matrix[row][col] == 0:
+                matrix[0][col] = 0 # denotes: whole column as 0s
+                print("zero", matrix[0])
+
+
     # iterate each cell starting second row
     # declare boolean (false) if the cell is 0
     # once  a cell with 0 is reached change the boolean, break the loop
+
 
         # iterate over the columns
         # if the cell has 0 or (boolean above) or corresponding index of first row is 0
