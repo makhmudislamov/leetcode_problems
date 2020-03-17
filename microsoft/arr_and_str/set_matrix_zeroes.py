@@ -48,51 +48,54 @@ def setZeroes(matrix):
 
     # iterate over the first row 
     # if it has 0 change the boolean to true
-
     for cell in range(width):
-        if matrix[cell] == 0:
-            print(matrix[cell])
+        if matrix[0][cell] == 0:       
             first_row_zero = True
-            print(first_row_zero)
+        
 
     # iterate over each cell
     # if the cell contains 0
     # mark the corresponding index of first row as zero >> denotes the whole column as 0
-
     for row in range(height):
-        for col in range(width):
-            print(matrix[row][col])
+        for col in range(width):        
             if matrix[row][col] == 0:
                 matrix[0][col] = 0 # denotes: whole column as 0s
-                print("zero", matrix[0])
+            
 
 
     # iterate each cell starting second row
     # declare boolean (false) if the cell is 0
     # once  a cell with 0 is reached change the boolean, break the loop
-
+    for row in range(1, height):
+        cell_has_zero = False
+        for col in range(width):
+            if matrix[row][col] == 0:
+                cell_has_zero = True
+                break
 
         # iterate over the columns
         # if the cell has 0 or (boolean above) or corresponding index of first row is 0
         # change this cell to 0
+        for col in range(width):
+            if cell_has_zero or matrix[0][col] == 0:
+                matrix[row][col] = 0
+            
 
 
     # if the first row has 0 (boolean above)
     #   iterate over the first row and change each cell to 0
 
+    if first_row_zero:
+        for cell in range(width):
+            matrix[0][cell] = 0
 
-    pass
+    return matrix
   
 
-
-
-
-
 matrix = [
-    [1, 1, 1],
-    [1, 0, 1],
-    [1, 1, 1]
-]
+    [0, 1, 2, 0], 
+    [3, 4, 5, 2], 
+    [1, 3, 1, 5]
+    ]
 
 print(setZeroes(matrix))
-# print(display_matrix(matrix))
