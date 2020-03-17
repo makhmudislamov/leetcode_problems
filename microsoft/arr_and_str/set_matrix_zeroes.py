@@ -40,8 +40,31 @@ def setZeroes(matrix):
     :type matrix: List[List[int]]
     :rtype: None Do not return anything, modify matrix in-place instead.
     """
-    for row in range(len(matrix)):
-        print(matrix[row][0])
+    # declaring height and width variables for iteration
+    # initialize boolean (false)to mark if the first row should be filled with 0s
+
+    # iterate over the first row 
+    # if it has 0 change the boolean to true
+
+    # iterate over each cell
+    # if the cell contains 0
+    # mark the corresponding index of first row as zero >> denotes the whole column as 0
+
+    # iterate each cell starting second row
+    # declare boolean (false) if the cell is 0
+    # once  a cell with 0 is reached change the boolean, break the loop
+
+        # iterate over the columns
+        # if the cell has 0 or (boolean above) or corresponding index of first row is 0
+        # change this cell to 0
+
+
+    # if the first row has 0 (boolean above)
+    #   iterate over the first row and change each cell to 0
+
+
+    pass
+  
 
 
 
