@@ -41,8 +41,25 @@ rotate the input matrix in-place such that it becomes:
 ]
 """
 
-def rotate(self, matrix: [[int]]):
+def rotate(matrix: [[int]]):
     """
     Do not return anything, modify matrix in-place instead.
     """
-    pass
+
+    # keep len of matrix in a variable for looping
+    # when looping the first time swam elemets diagonally, 4 and 2, 6 and 8 etc
+    # then during the second loop
+    # swap first and last element in each row
+
+    
+
+    
+matrix = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+]
+
+rotate(matrix)
+
+
