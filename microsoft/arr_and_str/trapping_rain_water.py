@@ -13,6 +13,19 @@ Input: [0,1,0,2,1,0,1,3,2,1,2,1]
 Output: 6
 """
 
+# helper func
+# at the target index
+# expand to two sides until on of the side values is less then previous value - should increase
+# in that condition >> max value of one side - min value of another side
+# return the value >> cubes of water in each section
 
-def trap(self, height: List[int]) -> int:
+def trap(height: [int]):
+    # init value that represents output (int=0)
+    # loop over the input
+    # call helper func for each value
+    # incerement the output value
     pass
+
+
+height = [0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1]
+print(trap(height))
