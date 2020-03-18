@@ -19,30 +19,29 @@ Output: 6
 # in that condition >> max value of one side - min value of another side
 # return the value >> cubes of water in each section
 
-def calculate_depth(height, target_index):
-    left = right = target_index
-    if height is None or len(height) < 1: 
-        return 0
-    walls = set()
-    while (left >= 0 and right < len(height)) and (height[left - 1] > height[left] and height[right] < height[right + 1]):
-        walls.add(height[target_index])
-        left -= 1
-        right += 1
-        walls.add(height[left])
-        walls.add(height[right])
-    print(walls)
-
-    return max(walls) - min(walls)
-
 
 def trap(height: [int]):
-    # init value that represents output (int=0)
-    # loop over the input
-    # call helper func for each value
-    # incerement the output value
-    pass
+    if height is None or len(height) == 0:
+        return 0
+
+    total = 0
+    level = 0
+    left = 0
+    right = len(height) - 1
+
+    while left < right:
+        if height[left] < height[right]:
+            lower = height[left]
+            left += 1
+        else:
+            lower = height[right]
+            right -= 1
+        level = max(lower, level)
+        total += level - lower
+        print("lower", lower)
+        print("total", total)
+    return total
 
 
 height = [0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1]
 print(trap(height))
-print(calculate_depth(height, 5))
