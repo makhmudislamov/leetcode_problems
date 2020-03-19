@@ -33,5 +33,19 @@ def spiralOrder(matrix: [[int]]):
     # while iterating the matrix
     # change direction in turning points and make sure you dont visit already visited cells
 
+    output_arr = []
+    height = len(matrix)
+    width = len(matrix[0])
     
-    pass
+
+    for row in range(height):
+        for col in range(width):
+            print(matrix[row][col])
+
+
+matrix = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+]
+spiralOrder(matrix)
