@@ -9,7 +9,7 @@ Follow up:
 
 A linked list can be reversed either iteratively or recursively. Could you implement both?
 Good explanation iterative: https://www.youtube.com/watch?v=XDO6I8jxHtA&t=502s
-
+https://www.youtube.com/watch?v=O0By4Zq0OFc
 """
 
 # Definition for singly-linked list.
