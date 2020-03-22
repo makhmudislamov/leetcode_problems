@@ -10,27 +10,17 @@ Example:
 Input: (2 -> 4 -> 3) + (5 -> 6 -> 4)
 Output: 7 -> 0 -> 8
 Explanation: 342 + 465 = 807.
+https://www.youtube.com/watch?v=aM4Iv7eEr2o
 """
 # Definition for singly-linked list.
-# class ListNode(object):
-#     def __init__(self, x):
-#         self.val = x
-#         self.next = None
+class ListNode(object):
+    def __init__(self, x):
+        self.val = x
+        self.next = None
 
 
 class Solution(object):
 
-    # helper method1
-    # initaliza variables to store nums as str
-    # iterate over ll1:
-    # retireve val and append the num val as a str to above var
-    # return it as int
-
-    # helper meethod2 - input array
-    # iterates over string
-    # turns the item into int and saves in array
-
-    # helper method3 - should build ll
 
     def addTwoNumbers(self, l1, l2):
         """
@@ -38,12 +28,40 @@ class Solution(object):
         :type l2: ListNode
         :rtype: ListNode
         """
-        # num1 = helper method1
-        # num2 = helper method2
+       
+        # initalizing output LL
+        new_ll_head = ListNode(0)
+        l3 = new_ll_head
 
-        # add two nums, stringify and reverse
-        # input array - helper method2
-        # return helper method3 (input array)
+        carry = 0 # carry value if the addition is >= 10
+        # iterating both lls at the same time 
+        while l1 != None or l2 != None:
+            # saving the val of the node if node is not none else, init as 0
+            l1_val = l1.val if l1 != None else 0
+            l2_val = l2.val if l2 != None else 0
+
+            current_sum = l1_val + l2_val + carry
+            carry = current_sum / 10
+            last_digit = current_sum % 10
+
+            # creating new node to output LL
+            new_node = ListNode(last_digit)
+            l3.next = new_node
+
+            # moving to next nodes in all 3 LLS
+            if l1 != None:
+                l1 = l1.next
+            if l2 != None:
+                l2 = l2.next
+            l3 = l3.next
+        
+        if carry > 0:
+            new_node = ListNode(carry)
+            l3.next = new_node
+            l3 = l3.next
+        
+        return new_ll_head.next
+
 
 
 
