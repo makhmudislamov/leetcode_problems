@@ -14,9 +14,17 @@ The average of the student with id = 1 is 87.
 The average of the student with id = 2 is 88.6. But with integer division their average converts to 88.
 """
 
-def highFive(self, items):
+def highFive(items):
     """
     :type items: List[List[int]]
     :rtype: List[List[int]]
     """
-    pass
+
+    # init output array
+    # iterate over the input
+    # sort the scores of the each student scores in descending order
+    # use sum // 5 operation and append the corresponding result for each student
+
+
+
+
