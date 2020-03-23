@@ -19,12 +19,21 @@ def highFive(items):
     :type items: List[List[int]]
     :rtype: List[List[int]]
     """
+    items = sorted(items, reverse=True)
+    average_5 = []
+    output = []
+    print(items)
+    for _id, score in items:
+        average_5.append(score)
+        if len(average_5) == 5:
+            output = [_id, sum(average_5) // 5]
+    return output
+        
 
-    # init output array
-    # iterate over the input
-    # sort the scores of the each student scores in descending order
-    # use sum // 5 operation and append the corresponding result for each student
+items = [[1, 91], [1, 92], [1, 60], [1, 65], [1, 87], [1, 100]]
+# items = [[1, 91], [1, 92], [2, 93], [2, 97], [1, 60], [
+#     2, 77], [1, 65], [1, 87], [1, 100], [2, 100], [2, 76]]
 
-
+print(highFive(items))
 
 
