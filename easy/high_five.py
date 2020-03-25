@@ -19,7 +19,7 @@ def highFive(items):
     :type items: List[List[int]]
     :rtype: List[List[int]]
     """
-    items = sorted(items, reverse=True)
+    items = sorted(items)
     average_5 = []
     output = []
     print(items)
@@ -30,9 +30,9 @@ def highFive(items):
     return output
         
 
-items = [[1, 91], [1, 92], [1, 60], [1, 65], [1, 87], [1, 100]]
-# items = [[1, 91], [1, 92], [2, 93], [2, 97], [1, 60], [
-#     2, 77], [1, 65], [1, 87], [1, 100], [2, 100], [2, 76]]
+# items = [[1, 91], [1, 92], [1, 60], [1, 65], [1, 87], [1, 100]]
+items = [[1, 91], [1, 92], [2, 93], [2, 97], [1, 60], [
+    2, 77], [1, 65], [1, 87], [1, 100], [2, 100], [2, 76]]
 
 print(highFive(items))
 
