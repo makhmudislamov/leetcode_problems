@@ -25,23 +25,21 @@ class Solution(object):
         :type lists: List[ListNode]
         :rtype: ListNode
         """
-        res = []
-        for ll in lists:
+        res = [] # n - space
+        for ll in lists: # n 
             while ll is not None:
                 res.append(ll.val)
                 ll = ll.next
-        res.sort()
-        print(res)
+        res.sort() # nlogn
 
-        for i in range(len(res)):
+
+        head = ListNode(res[0])
+        cur = head
+
+        for i in range(1, len(res)): # n
             node_item = res[i]
-            # print("node item is", str(node_item))
-            new_ln = ListNode(node_item)
-            print("node is ", str(new_ln))
-            new_ln.next = res[i+1]
-            print("node.next ", str(new_ln.next))
+            cur.next = ListNode(node_item)
+            cur = cur.next
+        return head
 
-            if res[i+1] == res[len(res) - 1]:
-                print("LAST NODE", new_ln)
-                new_ln.next = None
 
