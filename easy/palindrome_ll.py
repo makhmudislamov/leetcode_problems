@@ -22,19 +22,29 @@ class ListNode:
 
 class Solution:
     def isPalindrome(self, head: ListNode) -> bool:
-        arr = []
-        while head is not None: # O(n)
-            arr.append(head.val)
-            head = head.next
+        # O(1) space and (n) time SOLUTION
+        # PSEUDOCODE
+        # Find the end of the first half.
+        # Reverse the second half.
+        # Determine whether or not there is a palindrome.
+        # Restore the list.
+        # Return the result.
+
+
+# O(n) time and space SOLUTION
+    #     arr = []
+    #     while head is not None: # O(n)
+    #         arr.append(head.val)
+    #         head = head.next
         
-        return self.isPalArr(arr)
+    #     return self.isPalArr(arr)
         
-    def isPalArr(self, array):
-        start, end = 0, len(array) - 1
+    # def isPalArr(self, array):
+    #     start, end = 0, len(array) - 1
         
-        while start <= end: # O(n)
-            if array[start] != array[end]:
-                return False
-            start += 1
-            end -= 1
-        return True
+    #     while start <= end: # O(n)
+    #         if array[start] != array[end]:
+    #             return False
+    #         start += 1
+    #         end -= 1
+    #     return True
