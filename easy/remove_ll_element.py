@@ -16,4 +16,20 @@ class ListNode:
 
 class Solution:
     def removeElements(self, head: ListNode, val: int) -> ListNode:
-        pass
+        if head is None:
+            return None
+        # init empty node and link it no head
+        temp = ListNode(0)
+        temp.next = head
+
+        # init two neighbot pointers for iteration 
+        prev = temp
+        current = head
+        while current is not None:
+            # value found
+            if val == current.val:
+                prev.next = current.next # skip the node and link the previous node to next node
+            else:
+                prev = current # move prev
+            current = current.next # move current
+        return temp.next 
