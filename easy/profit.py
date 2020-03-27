@@ -19,11 +19,27 @@ Explanation: In this case, no transaction is done, i.e. max profit = 0.
 """
 
 
-def maxProfit(self, prices: [int]) -> int:
+def maxProfit( prices: [int]):
     # base case
     # if sorted in descending order return 0
 
     # find the min of and get index of min
     # starting next to tthat find max num
     # return min - max
-    pass
+
+    buy = min(prices)
+    iter_point = prices.index(buy)
+    if iter_point == len(prices) - 1:
+        return 0
+    sell = max(prices[iter_point+1::])
+    if buy > sell:
+        return 0
+    print(f"buy: {buy}, sell: {sell}")
+    return abs(buy - sell)
+
+
+# prices = [7, 1, 5, 3, 6, 4]
+# prices = [7, 6, 4, 3, 1]
+prices = [2, 4, 1]
+
+print(maxProfit(prices))
