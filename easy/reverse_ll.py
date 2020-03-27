@@ -31,7 +31,7 @@ class Solution:
         #     return None 
         # previous_node = None
         # while head != None:
-        #     next_node = head.next
+        #     next_node = head.next #declaring next node
         #     head.next = previous_node
         #     previous_node = head
         #     head = next_node
