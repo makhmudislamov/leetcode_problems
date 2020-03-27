@@ -19,5 +19,11 @@ Explanation: In this case, no transaction is done, i.e. max profit = 0.
 """
 
 
-def maxProfit(self, prices: List[int]) -> int:
+def maxProfit(self, prices: [int]) -> int:
+    # base case
+    # if sorted in descending order return 0
+
+    # find the min of and get index of min
+    # starting next to tthat find max num
+    # return min - max
     pass
