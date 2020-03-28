@@ -3,8 +3,6 @@ Given a non-empty, singly linked list with head node head, return a middle node 
 
 If there are two middle nodes, return the second middle node.
 
- 
-
 Example 1:
 
 Input: [1,2,3,4,5]
@@ -33,4 +31,11 @@ class ListNode:
 
 class Solution:
     def middleNode(self, head: ListNode) -> ListNode:
-        pass
+        middle_node = head
+        end_node = head.next.next
+        
+        while end_node.next is not None:
+            middle_node = middle_node.next
+            end_node = end_node.next
+            
+        return middle_node
