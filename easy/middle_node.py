@@ -31,11 +31,10 @@ class ListNode:
 
 class Solution:
     def middleNode(self, head: ListNode) -> ListNode:
-        middle_node = head
-        end_node = head.next.next
-        
-        while end_node.next is not None:
-            middle_node = middle_node.next
-            end_node = end_node.next
-            
-        return middle_node
+        end = middle = head
+
+        while end is not None and end.next is not None:
+            end = end.next.next
+            middle = middle.next
+
+        return middle
