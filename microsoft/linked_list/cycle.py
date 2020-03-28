@@ -41,4 +41,13 @@ class ListNode:
 class Solution:
     def hasCycle(self, head: ListNode) -> bool:
 
-        pass
+        slow = fast = head
+
+        while fast is not None:
+            slow = slow.next
+            fast = fast.next.next
+
+            if fast.next == slow:
+                return True
+
+        return False
