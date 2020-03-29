@@ -27,7 +27,7 @@ Note:
 
 
 class Solution:
-    def largestUniqueNumber(self, A: List[int]) -> int:
+    def largestUniqueNumber(self, A: [int]) -> int:
         # build hashmap with occurances
 
         # iterate over the hashmap
@@ -53,3 +53,4 @@ class Solution:
         if len(singles) != 0:
             return max(singles)
         return -1
+        # TODO: impoement stack instead of max(singles)
