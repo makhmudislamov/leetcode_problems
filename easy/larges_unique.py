@@ -28,4 +28,28 @@ Note:
 
 class Solution:
     def largestUniqueNumber(self, A: List[int]) -> int:
-        pass
+        # build hashmap with occurances
+
+        # iterate over the hashmap
+        # insert all nums with one accurance to list
+        # return max of that list
+
+        if len(A) < 1 or not A:
+            return -1
+        count = {}
+
+        for num in A:
+            if num not in count:
+                count[num] = 1
+            else:
+                count[num] += 1
+
+        singles = []
+
+        for num, _ in count.items():
+            if count.get(num) == 1:
+                singles.append(num)
+
+        if len(singles) != 0:
+            return max(singles)
+        return -1
