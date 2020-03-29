@@ -14,8 +14,16 @@ Note:
 You may assume k is always valid, 1 ≤ k ≤ number of unique elements.
 Your algorithm's time complexity must be better than O(n log n), where n is the array's size.
 """
-
+import heapq
 
 class Solution:
-    def topKFrequent(self, nums: List[int], k: int) -> List[int]:
-        pass
+    def topKFrequent(self, nums: [int], k: int) -> [int]:
+        frequency = {}
+#         building hashmap
+        for num in nums:
+            if num not in frequency:
+                frequency[num] = 1
+            else:
+                frequency[num] += 1
+#                 using heap nlargest
+        return heapq.nlargest(k, frequency.keys(), key=frequency.get)
