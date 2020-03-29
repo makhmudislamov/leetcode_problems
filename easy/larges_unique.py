@@ -46,8 +46,8 @@ class Solution:
 
         singles = []
 
-        for num, _ in count.items():
-            if count.get(num) == 1:
+        for num, occ in count.items():
+            if occ == 1:
                 singles.append(num)
 
         if len(singles) != 0:
