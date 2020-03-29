@@ -14,4 +14,16 @@ return [0, 1].
 
 class Solution:
     def twoSum(self, nums: [int], target: int) -> [int]:
-        pass
+        dif = {}
+
+        for index, num in enumerate(nums):
+            if not num in dif:
+                dif[target-num] = index             
+            else:
+                return [dif[num], index]
+
+
+nums = [2, 7, 11, 15]
+target = 9
+s = Solution()
+s.twoSum(nums, target)
