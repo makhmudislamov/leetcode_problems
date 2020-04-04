@@ -36,6 +36,9 @@ def merge(nums1: [int], m: int, nums2: [int], n: int) -> None:
             nums1[p] = nums2[p2]
             p1 -= 1
         p -= 1
+    
+    # adding missing elements from nums2
+    nums1[:p2 + 1] = nums2[:p2 + 1]
 
 
         
