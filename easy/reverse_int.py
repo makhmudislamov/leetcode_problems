@@ -27,7 +27,7 @@ def reverse( x: int) -> int:
     else:
         x = str(abs(x))
         x = -int(x[::-1])
-    print(x)
+    
     if -2**31 >= x or x >= 2**31 - 1:
         return 0
     return x

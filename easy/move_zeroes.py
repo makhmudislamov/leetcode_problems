@@ -18,24 +18,18 @@ class Solution:
         """
         Do not return anything, modify nums in-place instead.
         """
-        # end = len(nums) - 1
-        for i in nums:
-            if i == 0:
-                nums.remove(i)
-                nums.append(0)
-                # print(i)
-        # return nums
+        index = 0
 
-        # another approach
-        # int low = 0;
-        # int high = 0;
-        # while(high < nums.length){
-        #     if(nums[high] == 0){
-        #         high++;}else if(low == high){
-        #         low++;
-        #         high++; }else if(nums[high] > 0 | | nums[high]  < 0){
-        #         nums[low++] = nums[high];
-        #         nums[high++] = 0;
+        for i in range(len(nums)):
+            if nums[i] != 0:
+                nums[index] = nums[i]
+                index += 1
+        
+        for i in range(index, len(nums)):
+            nums[i] = 0
+
+        
+
 
 
             
