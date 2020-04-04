@@ -15,6 +15,25 @@ Output: [1,2,2,3,5,6]
 """
 
 
-class Solution:
-    def merge(self, nums1: List[int], m: int, nums2: List[int], n: int) -> None:
-        pass
+
+def merge(nums1: [int], m: int, nums2: [int], n: int) -> None:
+    pass
+    # SOLUTION 1 - O((n1 + n2)log(n+m)), Space O(1)
+    # nums1 extends nums2 and sorting
+
+    # SOLUTION 2 - O(m+n), Space (m) - using copy of nums1
+    # loop over nums2 and add it to nums1 in proper order
+
+    # SOLUTION 3 -  O(m+n), Space (1)
+    # two pointers from the end to fill nums1 since the end is empty
+    # 
+    
+
+nums1 = [1, 2, 3, 0, 0, 0] 
+m = 3
+nums2 = [2, 5, 6]
+n = 3
+
+print(merge(nums1, m, nums2, n))
+
+
