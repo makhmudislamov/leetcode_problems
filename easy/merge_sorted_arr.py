@@ -17,16 +17,27 @@ Output: [1,2,2,3,5,6]
 
 
 def merge(nums1: [int], m: int, nums2: [int], n: int) -> None:
-    pass
-    # SOLUTION 1 - O((n1 + n2)log(n+m)), Space O(1)
-    # nums1 extends nums2 and sorting
-
-    # SOLUTION 2 - O(m+n), Space (m) - using copy of nums1
-    # loop over nums2 and add it to nums1 in proper order
 
     # SOLUTION 3 -  O(m+n), Space (1)
     # two pointers from the end to fill nums1 since the end is empty
-    # 
+    p = len(nums1) - 1
+    p1 = m - 1
+    p2 = len(nums2) - 1
+
+    while p1 >= 0:
+        if nums1[p1] < nums2[p2]:
+            nums1[p] = nums2[p2]
+            p2 -= 1
+            p -= 1
+        elif nums1[p1] > nums2[p2]:
+            nums1[p] = nums1[p1]
+            p1 -= 1
+        else:
+            nums1[p] = nums2[p2]
+            p1 -= 1
+
+
+        
     
 
 nums1 = [1, 2, 3, 0, 0, 0] 
