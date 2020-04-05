@@ -31,6 +31,12 @@ import unittest
 def find_rotation_point(words):
 
     # Find the rotation point in the list
+    # use binary search
+    # declare target
+    # until you find the target 
+    # compare if the current postition is less or greater than the target
+    # if current is less than target - ignore the rest
+    # same if its greater  
 
     return -1
 
