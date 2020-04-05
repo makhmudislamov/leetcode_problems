@@ -62,17 +62,21 @@ class Solution:
         # declare output int and set to zero
         # iterate over the input from the left add the value to output int
         # include six instances and substract when needed
+        # jhg 
         output = 0
-        for char in s:
-            int_value =  ROMAN_VALUES.get(char)
-            output += int_value
-            if char == "I":
-                output -= int_value
+        for i in range(len(s)-1):
+            c = s[i]
+            c_next = s[i+1]
+            if ROMAN_VALUES[c] < ROMAN_VALUES[c_next]:
+                output -= ROMAN_VALUES[c]
+            else:
+                output += ROMAN_VALUES[c]
+        output = output + ROMAN_VALUES[s[-1]]
                 
         return output
         
 
-s = "IV"
+s = "MCMXCIV"
 
 sol = Solution()
 print(sol.romanToInt(s))
