@@ -23,5 +23,22 @@ Explanation: There are three ways to climb to the top.
 """
 
 
-def climbStairs(n: int) -> int:
-    pass
+def climbStairs(n: int):
+    # fibonacci numbers
+    if n==1:
+        return 1
+    
+    first = 1
+    second = 2
+
+    for i in range(3, n+1):
+        third = first + second
+        print("3rd", third)
+        first = second
+        print("1st", first)
+        second = third
+        print("2nd", second)
+    
+    return second
+
+print(climbStairs(6))
