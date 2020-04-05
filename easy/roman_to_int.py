@@ -71,7 +71,8 @@ class Solution:
                 output -= ROMAN_VALUES[c]
             else:
                 output += ROMAN_VALUES[c]
-        output = output + ROMAN_VALUES[s[-1]]
+        print(output)
+        output += ROMAN_VALUES[s[-1]]
                 
         return output
         
