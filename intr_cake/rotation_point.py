@@ -38,7 +38,22 @@ def find_rotation_point(words):
     # if current is less than target - ignore the rest
     # same if its greater  
 
-    return -1
+    first_word = words[0]
+    floor_ind = 0
+    ceiling_ind = len(words) - 1
+
+    while floor_ind < ceiling_ind:
+        guess_ind = floor_ind + ((ceiling_ind - floor_ind) // 2)
+
+        if words[guess_ind] >= first_word:
+            floor_ind = guess_ind
+        else:
+            ceiling_ind = guess_ind
+
+        if floor_ind + 1 == ceiling_ind:
+            return ceiling_ind
+
+    
 
 
 
