@@ -22,5 +22,20 @@ class TreeNode:
 
 
 class Solution:
-    def inorderTraversal(self, root: TreeNode) -> List[int]:
-        pass
+    def inorderTraversal(self, root: TreeNode):
+        # traverse until reach left child leaf
+        # visit node
+        #  traverse until you reach the rightest child leaf
+        if root is None:
+            return None
+        res = []
+        self.recursive(root, res)
+
+        return res
+
+    def recursive(self, root: TreeNode, res: []):
+        if root.left != None:
+            self.recursive(root.left, res)
+        res.append(root.val)
+        if root.right != None:
+            self.recursive(root.right, res)
