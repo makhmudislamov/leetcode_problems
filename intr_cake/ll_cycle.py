@@ -25,6 +25,14 @@ import unittest
 def contains_cycle(first_node):
 
     # Check if the linked list contains a cycle
+    nodes_set = set()
+
+    while first_node != None:
+        if first_node in nodes_set:
+            return True
+        else:
+            nodes_set.add(first_node)
+        first_node = first_node.next
 
     return False
 
