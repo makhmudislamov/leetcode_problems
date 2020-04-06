@@ -32,22 +32,35 @@ def can_two_movies_fill_flight(movie_lengths, flight_length):
     if len(movie_lengths) == 0 or len(movie_lengths) == 1:
         return False
 
-    start = 0
-    end = len(movie_lengths) - 1
-    sorted_arr = sorted(movie_lengths) # O(nLogn)
-    while start < end: # O(n)
-        two_movies_len = sorted_arr[start] + sorted_arr[end]
+    # start = 0
+    # end = len(movie_lengths) - 1
+    # sorted_arr = sorted(movie_lengths) # O(nLogn)
+    # while start < end: # O(n)
+    #     two_movies_len = sorted_arr[start] + sorted_arr[end]
 
-        if two_movies_len == flight_length:
-            return True
-        elif two_movies_len > flight_length:
-            end -= 1
-        else:
-            start += 1
+    #     if two_movies_len == flight_length:
+    #         return True
+    #     elif two_movies_len > flight_length:
+    #         end -= 1
+    #     else:
+    #         start += 1
 
-    return False
+    # return False
     # Total time complexity >> n  + n Logn = nLogn
 
+    # OPTIMIZATION
+
+    seen_movies = set() # SPACE - O(n)
+
+    for first_movie in movie_lengths: # TIME - O(n)
+        second_movie = flight_length - first_movie
+
+        if second_movie in seen_movies:
+            return True
+        seen_movies.add(first_movie)
+
+    return False
+    # TOTAL - SPACE and TIME - O(n)
 
 
 # Tests
