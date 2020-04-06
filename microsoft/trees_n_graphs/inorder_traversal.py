@@ -39,3 +39,15 @@ class Solution:
         res.append(root.val)
         if root.right != None:
             self.recursive(root.right, res)
+        
+    def iterative(self, root: TreeNode, res:[]):
+        current = root
+        stack = []
+        while current != None or len(stack) != 0:
+            while current != None:
+                stack.append(current)
+                current = current.left
+            current = stack.pop()
+            res.append(current.val)
+            current = current.right
+        
