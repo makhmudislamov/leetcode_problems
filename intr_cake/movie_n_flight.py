@@ -24,10 +24,27 @@ def can_two_movies_fill_flight(movie_lengths, flight_length):
     # target - flight lenght
     # find sum - in movies - exact?
     # PSEUDOCODE
-    # if not sorted, sorted movies arr
-    # set two pointers from the end and start of the arr
+    # if not sorted, sorted movies arr >> add it to set
+
+    # set two pointers from the end and start of the set
     # based on when which pointer moves and sum gets closer to sum, move the pointers
     # return True/False
+    if len(movie_lengths) == 0 or len(movie_lengths) == 1:
+        return False
+
+    start = 0
+    end = len(movie_lengths) - 1
+    sorted_arr = sorted(movie_lengths)
+    while start < end:
+        two_movies_len = sorted_arr[start] + sorted_arr[end]
+
+        if two_movies_len == flight_length:
+            return True
+        elif two_movies_len > flight_length:
+            end -= 1
+        else:
+            start += 1
+
     return False
 
 
