@@ -34,8 +34,8 @@ def can_two_movies_fill_flight(movie_lengths, flight_length):
 
     start = 0
     end = len(movie_lengths) - 1
-    sorted_arr = sorted(movie_lengths)
-    while start < end:
+    sorted_arr = sorted(movie_lengths) # O(nLogn)
+    while start < end: # O(n)
         two_movies_len = sorted_arr[start] + sorted_arr[end]
 
         if two_movies_len == flight_length:
@@ -46,6 +46,7 @@ def can_two_movies_fill_flight(movie_lengths, flight_length):
             start += 1
 
     return False
+    # Total time complexity >> n  + n Logn = nLogn
 
 
 
