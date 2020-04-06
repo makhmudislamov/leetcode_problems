@@ -16,7 +16,18 @@ import unittest
 def can_two_movies_fill_flight(movie_lengths, flight_length):
 
     # Determine if two movie runtimes add up to the flight length
+    # questions to ask:
+    # 1 - movies sorted?
+    # 2 first combo?
+    # 3 - exact sum?
 
+    # target - flight lenght
+    # find sum - in movies - exact?
+    # PSEUDOCODE
+    # if not sorted, sorted movies arr
+    # set two pointers from the end and start of the arr
+    # based on when which pointer moves and sum gets closer to sum, move the pointers
+    # return True/False
     return False
 
 
