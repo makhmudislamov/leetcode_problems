@@ -26,6 +26,9 @@ import unittest
 def is_binary_search_tree(root):
 
     # Determine if the tree is a valid binary search tree
+    # base case if root is None
+    # check if left node is less than parent
+    # check if right node is greater than parent
 
     return True
 
