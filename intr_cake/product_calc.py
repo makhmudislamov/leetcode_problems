@@ -26,7 +26,14 @@ import unittest
 def get_products_of_all_ints_except_at_index(int_list):
 
     # Make a list with the products
+    # base cases
+    if len(int_list) == 0 or len(int_list) == 1:
+        raise Exception("invalid input")
 
+    # O(n) time and space approach
+    #  calculating left and right products up to the index
+    
+    
     return []
 
 
