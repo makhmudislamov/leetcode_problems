@@ -18,9 +18,33 @@ import unittest
 
 def merge_lists(my_list, alices_list):
 
-    # Combine the sorted lists into one large sorted list
+    if not my_list and not alices_list:
+        return []
+    elif not my_list:
+        return alices_list
+    elif not alices_list:
+        return my_list
+    
 
-    return []
+    # Combine the sorted lists into one large sorted list
+    output = []
+    i = j = 0
+    for i in range(len(my_list)-1):
+        for j in range(len(alices_list)-1):
+            if my_list[i] > alices_list[j]:
+                output.append(alices_list[j])
+            else:
+                output.append(my_list[i])
+
+    if j == len(alices_list)-1:
+        for k in range(j, len(my_list)-1):
+            output.append(my_list[k])
+    
+    if i == len(my_list)-1:
+        for l in range(i, len(alices_list)-1):
+            output.append(alices_list[l])
+
+    return output
 
 
 
