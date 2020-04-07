@@ -30,9 +30,18 @@ def is_binary_search_tree(root):
     # check if left node is less than parent
     # check if right node is greater than parent
 
-    return True
+    return recursive(root, float("-inf"), float("inf"))
+def recursive(root, min_value, max_value):
+    if root is None:
+        return True
 
+    if root.value < min_value or root.value > max_value:
+        return False
 
+    is_left_valid = recursive(root.left, min_value, root.value - 1)
+    is_right_valid = recursive(root.right, root.value + 1, max_value)
+
+    return is_left_valid and is_right_valid
 
 # Tests
 
