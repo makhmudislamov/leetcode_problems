@@ -14,13 +14,41 @@ How can I trim down the amount of space taken up by visited?
 
 import unittest
 
+class Node(object):
+    def __init__(self, char):
+        self.char = char
+        self.children = {}
+        self.terminal = False
 
 class Trie(object):
+    def __init__(self):
+        self.root = Node("")
 
     # Implement a trie and use it to efficiently store strings
 
-    def add_word(self, word):
+    def contains(self, word):
+        current = self.root
+
+        for i, c in enumerate(word):
+            if current.children.get(c) != None:
+                current = current.children.get(c)
+
+            if i == len(word) - 1 and current.terminal is True:
+                return True
         return False
+
+    def add_word(self, word):
+        
+        current_node = self.root
+        if not self.contains(word):
+            for i, c in enumerate(word):
+                if current_node.children.get(c) == None:
+                    current_node.children[c] = Node(c)
+                current_node = current_node.children.get(c)
+            
+                if i == len(word) - 1 :
+                    current_node.terminal = True
+        return current_node.terminal
 
 
 
