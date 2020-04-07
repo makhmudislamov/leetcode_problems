@@ -25,26 +25,29 @@ def merge_lists(my_list, alices_list):
     elif not alices_list:
         return my_list
     
-
+    mine = len(my_list) - 1
     # Combine the sorted lists into one large sorted list
-    output = []
-    i = j = 0
-    for i in range(len(my_list)-1):
-        for j in range(len(alices_list)-1):
-            if my_list[i] > alices_list[j]:
-                output.append(alices_list[j])
-            else:
-                output.append(my_list[i])
+    my_list.extend([None]*len(alices_list)) # created extra space
 
-    if j == len(alices_list)-1:
-        for k in range(j, len(my_list)-1):
-            output.append(my_list[k])
+    # setting pointers
+    pointer = len(my_list) - 1
+    al_pointer = len(alices_list) - 1
+
+    while mine >= 0 and al_pointer >= 0:
+        if my_list[mine] < alices_list[al_pointer]:
+            my_list[pointer] = alices_list[al_pointer]
+            al_pointer -= 1
+        elif my_list[mine] > alices_list[al_pointer]:
+            my_list[pointer] = my_list[mine]
+            mine -= 1
+        else:
+            my_list[pointer] = alices_list[al_pointer]
+            mine -= 1
+        pointer -= 1
     
-    if i == len(my_list)-1:
-        for l in range(i, len(alices_list)-1):
-            output.append(alices_list[l])
+    my_list[:al_pointer + 1] = alices_list[:al_pointer + 1]
+    return my_list
 
-    return output
 
 
 
