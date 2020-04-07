@@ -29,7 +29,7 @@ def is_binary_search_tree(root):
     # base case if root is None
     # check if left node is less than parent
     # check if right node is greater than parent
-
+    # TIME AND SPACE - O(n) - visiting all nodes. SPACE - O(1)
     return recursive(root, float("-inf"), float("inf"))
 def recursive(root, min_value, max_value):
     if root is None:
