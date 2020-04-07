@@ -28,7 +28,7 @@ Constraints:
 The number of nodes in the given tree is less than 6000.
 -100 <= node.val <= 100
 """
-"""
+
 # Definition for a Node.
 class Node:
     def __init__(self, val: int = 0, left: 'Node' = None, right: 'Node' = None, next: 'Node' = None):
@@ -36,9 +36,17 @@ class Node:
         self.left = left
         self.right = right
         self.next = next
-"""
+
 
 
 class Solution:
-    def connect(self, root: 'Node') -> 'Node':
-        pass
+    def connect(self, root: Node) -> Node:
+    # PSUEDOCODE
+    # do level order traversal
+    #  set root next to null
+    # on each level set next pointer to neighboiring child. 
+    # last items next on the level should point to None
+    # return root
+
+
+        
