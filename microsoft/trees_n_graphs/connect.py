@@ -48,5 +48,17 @@ class Solution:
     # last items next on the level should point to None
     # return root
 
+        if root is  None:
+            return None
+        
+        # call recursive func here
+        self.recursive_travel(root, None)
+        
+        return root
+
+    def recursive_travel(self, node, next_pointer):
+        node.next = next_pointer
+        if node.left and node.right:
+            self.recursive_travel(node.left, node.right)
 
         
