@@ -11,14 +11,27 @@ import unittest
 
 
 class QueueTwoStacks(object):
+    def __init__(self):
+        self.in_stack = []
+        self.out_stack = []
 
     # Implement the enqueue and dequeue methods
 
     def enqueue(self, item):
-        pass
+        self.in_stack.append(item)
 
     def dequeue(self):
-        pass
+        if len(self.out_stack) == 0:
+            while len(self.in_stack) > 0:
+                # moving items from in to out
+                last_in = self.in_stack.pop()
+                self.out_stack.append(last_in)
+        
+            if len(self.out_stack) == 0:
+                raise IndexError("Empty Queue")
+
+        return self.out_stack.pop()
+            
 
 
 
