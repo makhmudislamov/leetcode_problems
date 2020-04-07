@@ -33,6 +33,8 @@ def merge_lists(my_list, alices_list):
     pointer = len(my_list) - 1
     al_pointer = len(alices_list) - 1
 
+
+    # TIME AND SPACE - O(n+m) and O(1)?
     while mine >= 0 and al_pointer >= 0:
         if my_list[mine] < alices_list[al_pointer]:
             my_list[pointer] = alices_list[al_pointer]
@@ -47,6 +49,23 @@ def merge_lists(my_list, alices_list):
     
     my_list[:al_pointer + 1] = alices_list[:al_pointer + 1]
     return my_list
+
+    # HAS BUG
+    # res = []
+    # i = j = 0
+    # while i <= len(my_list) - 1 and j <= len(alices_list) - 1:
+    #     if my_list[i] < alices_list[j]:
+    #         res.append(my_list[i])
+    #     else:
+    #         res.append(alices_list[j])
+
+    #     i += 1
+    #     j += 1
+    # if j == len(alices_list):
+    #     res.extend(my_list[i:])
+    # elif i == len(my_list):
+    #     res.extend(alices_list[j:])
+    # return res
 
 
 
