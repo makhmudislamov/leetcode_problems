@@ -15,7 +15,15 @@ import unittest
 
 
 def fib(n):
+    if n == 0:
+        return 0
+    if n == 1:
+        return 1
+    if n < 0:
+        raise Exception("Negative input")
 
+    for _ in range(n):
+        return fib(n-1) + fib(n-2)
     # Compute the nth Fibonacci number
 
     # Tests
