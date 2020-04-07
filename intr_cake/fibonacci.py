@@ -13,14 +13,35 @@ fib(4)  # => 3
 
 import unittest
 
+# MEMOIZATION - Time and Space  - O(n)
+
+# class Fibonacci(object):
+#     def __init__(self):
+#         self.memo = {}
+
 
 def fib(n):
+    memo = {}
+    if n < 0 :
+        raise Exception("Negative Input")
 
-
-    # TIME and SPACE COMPLEXITY: O(2**n)  - exponential
     if n in [0,1]:
         return n
-    return fib(n-1) + fib(n-2)
+    # if we already calculated for n
+    if n in memo:
+        return memo[n]
+    
+    result = fib(n-1) + fib(n-2)
+    memo[n] = result
+
+    return result
+
+# RECURSIVE - exponential - NOT GOOD
+# def fib(n):
+    # TIME and SPACE COMPLEXITY: O(2**n)  - exponential
+    # if n in [0,1]:
+    #     return n
+    # return fib(n-1) + fib(n-2)
 
 
     # Tests
