@@ -22,33 +22,32 @@ class Node(object):
 
 class Trie(object):
     def __init__(self):
-        self.root = Node("")
+        self.root = {}
 
     # Implement a trie and use it to efficiently store strings
 
-    def contains(self, word):
-        current = self.root
-
-        for i, c in enumerate(word):
-            if current.children.get(c) != None:
-                current = current.children.get(c)
-
-            if i == len(word) - 1 and current.terminal is True:
-                return True
-        return False
-
     def add_word(self, word):
-        
         current_node = self.root
-        if not self.contains(word):
-            for i, c in enumerate(word):
-                if current_node.children.get(c) == None:
-                    current_node.children[c] = Node(c)
-                current_node = current_node.children.get(c)
-            
-                if i == len(word) - 1 :
-                    current_node.terminal = True
-        return current_node.terminal
+        is_new_word = False
+
+        # Work downwards through the trie, adding nodes
+        # as needed, and keeping track of whether we add
+        # any nodes.
+        for char in word:
+            if char not in current_node:
+                is_new_word = True
+                current_node[char] = {}
+            current_node = current_node[char]
+
+        # Explicitly mark the end of a word.
+        # Otherwise, we might say a word is
+        # present if it is a prefix of a different,
+        # longer word that was added earlier.
+        if "End Of Word" not in current_node:
+            is_new_word = True
+            current_node["End Of Word"] = {}
+
+        return is_new_word
 
 
 
