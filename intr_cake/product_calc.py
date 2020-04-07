@@ -30,25 +30,37 @@ def get_products_of_all_ints_except_at_index(int_list):
     if len(int_list) == 0 or len(int_list) == 1:
         raise Exception("invalid input")
 
-    # O(n) time and space approach
-    #  calculating left and right products up to the index
-    left_products = [None] * len(int_list)
-    right_products = [None] * len(int_list)
+    # SPACE AND TIME - O(1) and O(n)
     res = [None] * len(int_list)
-
-    # calculating left of the current index 
     current_product = 1
     for i in range(len(int_list)):
-        left_products[i] = current_product
+        res[i] = current_product
         current_product *= int_list[i]
-    # calculating left of the current index
+
     current_product = 1
     for i in range(len(int_list)-1, -1, -1):
-        right_products[i] = current_product
+        res[i] *= current_product
         current_product *= int_list[i]
 
-    for i in range(len(int_list)):
-        res[i] = left_products[i] * right_products[i]
+
+    # O(n) time and space approach
+    #  calculating left and right products up to the index
+    # left_products = [None] * len(int_list)
+    # right_products = [None] * len(int_list)
+
+    # # calculating left of the current index 
+    # current_product = 1
+    # for i in range(len(int_list)):
+    #     left_products[i] = current_product
+    #     current_product *= int_list[i]
+    # # calculating left of the current index
+    # current_product = 1
+    # for i in range(len(int_list)-1, -1, -1):
+    #     right_products[i] = current_product
+    #     current_product *= int_list[i]
+
+    # for i in range(len(int_list)):
+    #     res[i] = left_products[i] * right_products[i]
 
     return res
 
