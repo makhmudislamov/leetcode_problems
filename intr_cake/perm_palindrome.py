@@ -21,6 +21,12 @@ import unittest
 def has_palindrome_permutation(the_string):
 
     # Check if any permutation of the input is a palindrome
+    # Time and Space - O(n) dict, O(n) space
+    # build a dict to store ocuurance of each letter in the word
+
+    # loop over the word
+    # if len of the word is even and occurance of each letter should be even always - True
+    # if len of the word is odd and occurance of only one letter can be not even  - True
 
     return False
 
