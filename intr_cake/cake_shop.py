@@ -42,9 +42,40 @@ def is_first_come_first_served(take_out_orders, dine_in_orders, served_orders):
 
     # O(1) space and O(n) time - check items in boths list and if they are in the sorted order in served list
 
-    
+    # more efficient would be to start looping and checking from the end of the lists
 
-    return False
+    # init indexs of served list
+    # loop from, the end
+    # if two neighboring nums are sorted and both exist in two other list
+    # return True
+    # return False
+
+    if len(take_out_orders) + len(dine_in_orders) != len(served_orders):
+        return False
+
+    for order in dine_in_orders:
+        if order not in served_orders:
+            return False
+    
+    for order in take_out_orders:
+        if order not in served_orders:
+            return False
+
+    last = len(served_orders) - 1
+    prev = len(served_orders) - 2
+    all_orders = dine_in_orders.extend(take_out_orders)
+    print(all_orders)
+    while prev >= 0 and last >= 1:
+        newer = served_orders[last] 
+        older = served_orders[prev]
+        if newer < older:
+            return False
+     
+        last -= 1
+        prev -= 1
+    
+    return True
+
 
 
 
