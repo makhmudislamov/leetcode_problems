@@ -49,30 +49,49 @@ def is_first_come_first_served(take_out_orders, dine_in_orders, served_orders):
     # if two neighboring nums are sorted and both exist in two other list
     # return True
     # return False
+    # TIME AND SPACE - O(n+m+l) and O(1)
+    # if len(take_out_orders) + len(dine_in_orders) != len(served_orders):
+    #     return False
+    # # O(n)
+    # for order in dine_in_orders:
+    #     if order not in served_orders:
+    #         return False
+    # # O(m)
+    # for order in take_out_orders:
+    #     if order not in served_orders:
+    #         return False
 
+    # last = len(served_orders) - 1
+    # prev = len(served_orders) - 2
+    # # O(l)
+    # while prev >= 0 and last >= 1:
+    #     newer = served_orders[last] 
+    #     older = served_orders[prev]
+    #     if newer < older:
+    #         return False
+     
+    #     last -= 1
+    #     prev -= 1
+    
+    # return True
+    # TIME AND SPACE - O(n) and O(1)
     if len(take_out_orders) + len(dine_in_orders) != len(served_orders):
         return False
 
-    for order in dine_in_orders:
-        if order not in served_orders:
-            return False
-    
-    for order in take_out_orders:
-        if order not in served_orders:
-            return False
+    take_index = 0
+    dine_index = 0
+    take_index_max = len(take_out_orders) - 1
+    dine_index_max = len(dine_in_orders) - 1
 
-    last = len(served_orders) - 1
-    prev = len(served_orders) - 2
-    all_orders = dine_in_orders.extend(take_out_orders)
-    print(all_orders)
-    while prev >= 0 and last >= 1:
-        newer = served_orders[last] 
-        older = served_orders[prev]
-        if newer < older:
+    for order in served_orders:
+
+        if take_index <= take_index_max and order == take_out_orders[take_index]:
+            take_index += 1
+        elif dine_index <= dine_index_max and order == dine_in_orders[dine_index]:
+            dine_index += 1
+
+        else:
             return False
-     
-        last -= 1
-        prev -= 1
     
     return True
 
