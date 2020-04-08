@@ -27,7 +27,8 @@ def has_palindrome_permutation(the_string):
     # loop over the word
     # if len of the word is even and occurance of each letter should be even always - True
     # if len of the word is odd and occurance of only one letter can be not even  - True
-
+    if len(the_string) < 1:
+        return True
     letters = {}
     # building dict
     for c in the_string:
@@ -35,17 +36,19 @@ def has_palindrome_permutation(the_string):
             letters[c] = 1
         else:
             letters[c] += 1
+    print(letters)
     len_check = len(the_string) % 2
     counter = 0
-    for c in the_string:
-        occ_check = letters[c] % 2
+    for c, o in letters.items():
+        occ_check = o % 2
         if len_check == 0 and occ_check != 0:
             return False
+
         if len_check != 0:
             if occ_check != 0:
                 counter += 1
         
-    if counter != 1:
+    if len_check != 0 and counter != 1:
         return False
     
 
