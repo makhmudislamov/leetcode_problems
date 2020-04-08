@@ -29,31 +29,42 @@ def has_palindrome_permutation(the_string):
     # if len of the word is odd and occurance of only one letter can be not even  - True
     if len(the_string) < 1:
         return True
-    letters = {}
-    # building dict
-    for c in the_string:
-        if c not in letters:
-            letters[c] = 1
-        else:
-            letters[c] += 1
-    print(letters)
-    len_check = len(the_string) % 2
-    counter = 0
-    for c, o in letters.items():
-        occ_check = o % 2
-        if len_check == 0 and occ_check != 0:
-            return False
-
-        if len_check != 0:
-            if occ_check != 0:
-                counter += 1
-        
-    if len_check != 0 and counter != 1:
-        return False
+    # letters = {}
+    # # building dict
+    # for c in the_string:
+    #     if c not in letters:
+    #         letters[c] = 1
+    #     else:
+    #         letters[c] += 1
     
+    # len_check = len(the_string) % 2
+    # counter = 0
+    # for c, o in letters.items():
+    #     occ_check = o % 2
+    #     if len_check == 0 and occ_check != 0:
+    #         return False
 
+    #     if len_check != 0:
+    #         if occ_check != 0:
+    #             counter += 1
+        
+    # if len_check != 0 and counter != 1:
+    #     return False
+    # return True
 
-    return True
+    # Approach with set
+    # Time and Space - O(n) - looping over the input, O(n) or O(k) or O(1) as there are limited num of ASCII and UNICODE
+
+    unpaired = set()
+
+    for char in the_string:
+        if char in unpaired:
+            unpaired.remove(char)
+        else:
+            unpaired.add(char)
+    
+    if len(unpaired) <= 1:
+        return True
 
 
 
