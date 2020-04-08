@@ -38,6 +38,11 @@ import unittest
 def is_first_come_first_served(take_out_orders, dine_in_orders, served_orders):
 
     # Check if we're serving orders first-come, first-served
+    # merging two sorted arrays and checking if its the same as server orders list - O(n) space and time
+
+    # O(1) space and O(n) time - check items in boths list and if they are in the sorted order in served list
+
+    
 
     return False
 
