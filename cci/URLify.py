@@ -14,20 +14,20 @@ output: "John%20Smith"
 # approach 1 - time and space >> O(n) and O(n)
 # iterate over the string if the char is " " replace it with %20
 
-def urlify(s):
-    # base cases
-    if not s:
-        return s
-    if s == " ":
-        return "%20"
+# def urlify(s):
+#     # base cases
+#     if not s:
+#         return s
+#     if s == " ":
+#         return "%20"
     
-    arr = list(s) # O(n) space
-    for i in range(len(arr)): # O(n) time
-        # print(char)
-        if arr[i] == " ":
-            arr[i] = "%20"
+#     arr = list(s) # O(n) space
+#     for i in range(len(arr)): # O(n) time
+#         # print(char)
+#         if arr[i] == " ":
+#             arr[i] = "%20"
 
-    return "".join(arr) #O(n) time
+#     return "".join(arr) #O(n) time
 
 # apprach 2 - O(n) and O(n)
 # def urlify(s):
@@ -37,5 +37,24 @@ def urlify(s):
 #     if s == " ":
 #         return "%20"
 #     return s.replace(" ", "%20") # returns the copy of the string
+
+# approach 3 - O(n) time and O(n) space
+def urlify(s):
+    # base cases
+    if not s:
+        return s
+    if s == " ":
+        return "%20"
+    
+    # implement replace()
+    res = ""
+
+    for char in s:
+        if char == " ":
+            res += "%20"
+        else:
+            res += char
+    
+    return res
 
 print(urlify("John Smith Kaka"))
