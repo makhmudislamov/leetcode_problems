@@ -27,4 +27,15 @@ class Solution:
         # cover each case and add al combos to output set
         # turn set into int int
         # return int int
-        pass
+        res = set()
+        all_zero = False
+        one_zero = False
+        no_zero = False 
+
+        sorted_nums = sorted(nums)
+        print(sorted_nums)
+        
+
+nums = [-1, 0, 1, 2, -1, -4]
+s=Solution()
+s.threeSum(nums)
