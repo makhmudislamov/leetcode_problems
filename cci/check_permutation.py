@@ -31,6 +31,8 @@ given two strings, check if one is a permutation of another
 # if hashmap is empty - return true
 
 def is_permutation(str1, str2):
+    if len(str1) != len(str2):
+        return False
     freq = {}
     # building dict with str1
     for char in str1:
@@ -52,4 +54,4 @@ def is_permutation(str1, str2):
     return not freq
     
 
-print(is_permutation("doG", "Godo"))
+print(is_permutation("doG", "God"))
