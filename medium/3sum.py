@@ -57,6 +57,20 @@ class Solution:
             # binary search the opposite signed num,  num!=0 add this case
             # if found add to res as [-num, 0, num]
 
+    def binary_search(self, nums, num, start=0, end=len(nums) - 1):
+
+        # start = 0
+        # end = len(nums) - 1
+
+        mid = start + (start + end) // 2
+
+        if nums[mid] == num:
+            return nums[mid]
+
+        
+
+        
+
         
 
         
