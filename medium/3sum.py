@@ -33,8 +33,34 @@ class Solution:
         no_zero = False 
 
         sorted_nums = sorted(nums)
-        print(sorted_nums)
         
+
+        zeros = 0
+        # counting zeros
+        for num in nums:
+            if num == 0:
+                zeros += 1
+        # setting case boolean
+        if zeros == 0:
+            no_zero = True
+        if zeros == 1:
+            one_zero = True
+        elif zeros >= 3:
+            all_zero = True
+        
+        # kicking off sub algos
+        if all_zero == True:
+            res.add([0,0,0])
+        
+        if one_zero == True:
+            # iterate over the array
+            # binary search the opposite signed num,  num!=0 add this case
+            # if found add to res as [-num, 0, num]
+
+        
+
+        
+
 
 nums = [-1, 0, 1, 2, -1, -4]
 s=Solution()
