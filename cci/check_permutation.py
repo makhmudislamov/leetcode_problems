@@ -22,4 +22,34 @@ given two strings, check if one is a permutation of another
 
 #     return str1 == str2
 
+# approach 2 = time and space - o(n) and O(n)
+# create hashmap - char and frequency with first string
+# go throught the second string
+# decrement the char value from the hashmap if char exists
+# if the req value is zero remove the key altogether
 
+# if hashmap is empty - return true
+
+def is_permutation(str1, str2):
+    freq = {}
+    # building dict with str1
+    for char in str1:
+        if char not in freq:
+            freq[char] = 1
+        else:
+            freq[char] += 1
+    
+    for char in str2:
+        if char not in freq:
+            return False
+        else:
+            freq[char] -= 1
+        
+        if freq[char] == 0:
+            freq.pop(char)
+
+    
+    return not freq
+    
+
+print(is_permutation("doG", "Godo"))
