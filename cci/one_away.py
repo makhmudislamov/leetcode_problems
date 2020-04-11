@@ -44,9 +44,15 @@ def one_away(s1, s2):
             freq.pop(char)
 
     return not freq or len(freq) == 1
-    
+
+# approach 2 - O(nlogn) time and const space
+# sort
+# have two pointers for each string
+# init difference counter
+# increment difference in each case
+# if counter is zero or one return true
         
 s1 = "pale"
-s2 = "pleasd"
+s2 = "pallle"
 
 print(one_away(s1, s2))
