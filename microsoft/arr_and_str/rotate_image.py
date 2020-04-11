@@ -58,12 +58,14 @@ def rotate(matrix: [[int]]):
             temporary = matrix[row][col]
             matrix[row][col] = matrix[col][row]
             matrix[col][row] = temporary        
-    # print(matrix)# this gives us: [[1, 4, 7], [2, 5, 8], [3, 6, 9]]
+    print(matrix)# this gives us: [[1, 4, 7], [2, 5, 8], [3, 6, 9]]
     
     for row in range(mat_len):
-        for col in range(mat_len // 2):
+        for col in range(mat_len // 2): # for colum we just need to go until the middle since 
+          # we are swapping two elements form the begginning and end
             temporary = matrix[row][col]
-            matrix[row][col] = matrix[row][mat_len - 1 - col]
+            matrix[row][col] = matrix[row][mat_len - 1 - col] # symmetrix swapping
+            print(temporary, "swapping with", matrix[row][mat_len - 1 - col])
             matrix[row][mat_len - 1 - col] = temporary
         # this gives us: [[7, 4, 1], [8, 5, 2], [9, 6, 3]]
     print(matrix)
