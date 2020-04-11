@@ -57,25 +57,28 @@ def rotate(matrix: [[int]]):
         for col in range(row, mat_len):
             temporary = matrix[row][col]
             matrix[row][col] = matrix[col][row]
-            matrix[col][row] = temporary
-        
-    print(matrix)# this gives us: [[1, 4, 7], [2, 5, 8], [3, 6, 9]]
+            matrix[col][row] = temporary        
+    # print(matrix)# this gives us: [[1, 4, 7], [2, 5, 8], [3, 6, 9]]
     
     for row in range(mat_len):
         for col in range(mat_len // 2):
             temporary = matrix[row][col]
-            # print("beg temp", temporary)
-            # print("this", matrix[row][mat_len - 1 - col])
             matrix[row][col] = matrix[row][mat_len - 1 - col]
             matrix[row][mat_len - 1 - col] = temporary
-            # print("end temp", temporary)
         # this gives us: [[7, 4, 1], [8, 5, 2], [9, 6, 3]]
     print(matrix)
     
+
+# matrix = [
+#     [1, 2, 3],
+#     [4, 5, 6],
+#     [7, 8, 9]
+# ]
 matrix = [
-    [1, 2, 3],
-    [4, 5, 6],
-    [7, 8, 9]
+    [5, 1, 9, 11],
+    [2, 4, 8, 10],
+    [13, 3, 6, 7],
+    [15, 14, 12, 16]
 ]
 
 rotate(matrix)
