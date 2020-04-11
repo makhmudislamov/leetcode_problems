@@ -25,20 +25,49 @@ input has only uppercase and lowercase letters (a-z)
 def compressor(s):
     if not s:
         return s
+    if len(s) == 1:
+        return s
 
-    frequency_map = {}
-    res = ""
+    # frequency_map = {}
+    # res = ""
 
-    for char in s:
-        if char not in frequency_map:
-            frequency_map[char] = 1
-        else:
-            frequency_map[char] += 1
+    # for char in s:
+    #     if char not in frequency_map:
+    #         frequency_map[char] = 1
+    #     else:
+    #         frequency_map[char] += 1
+            
+    # print(frequency_map)
+    # # for char, freq in frequency_map.items():
+    # #     res += char
+    # #     res += str(freq)
+
+    # return res
     
-    for char, freq in frequency_map.items():
-        res += char
-        res += str(freq)
+    # plan b
+    # init stack
+    # init counter
+    # increment counte
 
+
+    stack = []
+    res = ""
+    for char in s:
+        stack.append(char)
+        
+        if char != stack[0]:
+            stack.pop()
+  
+            res += stack[0]
+            res += str(len(stack))
+
+            stack.clear()
+            stack.append(char)
+    
+    res += stack[0]
+    res += str(len(stack))
+    
     return res
 
-print(compressor("aabcccccbaaa"))
+
+print(compressor("aabcccccaaa"))
