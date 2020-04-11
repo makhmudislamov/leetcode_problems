@@ -19,30 +19,27 @@ def rotate_matrix(matrix):
     for row in range(matrix_len):
         for col in range(row, matrix_len): # go along with row so not range(0, len)
             # transposing - swapping diagonally
-            temp = matrix[row][col]
-            matrix[row][col] = matrix[col][row]
-            matrix[col][row] = temp
+            matrix[row][col], matrix[col][row] = matrix[col][row], matrix[row][col]
 
     # swapping elements from two ends
     for row in range(matrix_len):
         for col in range(matrix_len // 2): # looping until we reach the half of each col
-            temp = matrix[row][col]
-            matrix[row][col] = matrix[row][matrix_len - 1 - col]
-            matrix[row][matrix_len - 1 - col] = temp
+            matrix[row][col], matrix[row][matrix_len - 1 -
+                                          col] = matrix[row][matrix_len - 1 - col], matrix[row][col]
     
     print(matrix)
 
 
-# matrix = [
-#     [1, 2, 3],
-#     [4, 5, 6],
-#     [7, 8, 9]
-# ]
 matrix = [
-    [5, 1, 9, 11],
-    [2, 4, 8, 10],
-    [13, 3, 6, 7],
-    [15, 14, 12, 16]
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
 ]
+# matrix = [
+#     [5, 1, 9, 11],
+#     [2, 4, 8, 10],
+#     [13, 3, 6, 7],
+#     [15, 14, 12, 16]
+# ]
 rotate_matrix(matrix)
 
