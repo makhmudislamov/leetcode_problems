@@ -22,6 +22,11 @@ input has only uppercase and lowercase letters (a-z)
 # loop over the dict
 # add key,value as string to output
 
+def incrementor(res, stack):
+    res += stack[0]
+    if len(stack) > 1:
+        res += str(len(stack))
+        
 def compressor(s):
     if not s:
         return s
@@ -56,18 +61,19 @@ def compressor(s):
         stack.append(char)
         
         if char != stack[0]:
+            
             stack.pop()
   
             res += stack[0]
-            res += str(len(stack))
+            if len(stack) > 1:
+                res += str(len(stack))
 
             stack.clear()
             stack.append(char)
     
     res += stack[0]
-    res += str(len(stack))
-    
-    return res
+    if len(stack) > 1:
+        res += str(len(stack))
+    return res if len(res) <= len(s) else s
 
-
-print(compressor("aabcccccaaa"))
+print(compressor("abbc"))
