@@ -21,3 +21,24 @@ input has only uppercase and lowercase letters (a-z)
 # build dict with char and frequency
 # loop over the dict
 # add key,value as string to output
+
+def compressor(s):
+    if not s:
+        return s
+
+    frequency_map = {}
+    res = ""
+
+    for char in s:
+        if char not in frequency_map:
+            frequency_map[char] = 1
+        else:
+            frequency_map[char] += 1
+    
+    for char, freq in frequency_map.items():
+        res += char
+        res += str(freq)
+
+    return res
+
+print(compressor("aabcccccbaaa"))
