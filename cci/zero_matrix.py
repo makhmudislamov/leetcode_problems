@@ -17,31 +17,48 @@ def zero_matrix(matrix):
     if not matrix:
         return matrix
 
-    zero_row = []
-    zero_col = []
     # after first iteartion if both arr are empty return the input
 
     row_len = len(matrix[0])
     col_len = len(matrix)
+    # we'll need this if we have to mark the first row zero
+    first_row_zero = False
+
+    # check if the first row has zero and change the boolean
+    for cell in matrix[0]:
+        if cell == 0:
+            first_row_zero = True
+
+    # if the cell is zero denote the whole column as zero
     for row in range(row_len):
         for col in range(col_len):
             if matrix[row][col] == 0:
-                zero_row.append(row)
-                zero_col.append(col)
-
-    # if there are no zeros return the input
-    if len(zero_col) == len(zero_row) == 0:
-        return matrix
-    # filling the zeros
-    for row in range(row_len):
-        if row in zero_row:
-            matrix[row] = [0] * len(matrix[row])
+                matrix[0][col] = 0
+    print("setting cols to zero up to this row", matrix)
+    # iterate each cell starting second row
+    # declare boolean (false) if the cell is 0
+    # once  a cell with 0 is reached change the boolean, break the loop
+    for row in range(1, row_len):
+        cell_is_zero = False
         for col in range(col_len):
-            if col in zero_col:
-                matrix[row][col] = 0
+            if matrix[row][col] == 0:
+                cell_is_zero = True
+                break
     
-    return matrix
+    # iterate over the columns
+    # if the cell has 0 or (boolean above) or corresponding index of first row is 0
+    # change this cell to 0
+        for col in range(col_len):
+            if matrix[0][col] == 0 or cell_is_zero == True:
+                matrix[row][col] = 0
+    print("setting zeros", matrix)
+    # if the first row has 0 (boolean above)
+    #   iterate over the first row and change each cell to 0
+    if first_row_zero:
+        for cell in matrix[0]:
+            matrix[0][cell] = 0
 
+    print(matrix)
 
 matrix = [
     [1, 2, 3],
