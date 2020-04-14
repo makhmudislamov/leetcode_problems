@@ -21,22 +21,35 @@ def reorder(arr):
 
     if len(arr) == 1:
         return arr
-    
-    res = []
 
-    for num in arr:
-        if num != 0 and num % 2 == 0:
-            res.append(num)
+    # res = []
+    # for num in arr:
+    #     if num != 0 and num % 2 == 0:
+    #         res.append(num)
 
-    if not res:
-        return arr
+    # if not res:
+    #     return arr
 
-    for num in arr:
-        if num == 0 or num % 2 != 0:
-            res.append(num)
+    # for num in arr:
+    #     if num == 0 or num % 2 != 0:
+    #         res.append(num)
 
-    return res
+    # return res
 
+    # Apprach 2 - O(1) space and O(n) time
+    # partition: unclassified - while array, even and odd
+    # as going through change the boundries 
+    # when found even num swap places
 
-arr = [3, 5, 5, 0, 7, 1]
+    even, odd = 0, len(arr)-1
+    while even < odd:
+        if arr[even] % 2 == 0:
+            even += 1
+        else:
+            arr[even], arr[odd] = arr[odd], arr[even]
+            odd -= 1
+
+    return arr
+
+arr = [8, 2, 5, 0, 6, 1]
 print(reorder(arr))
