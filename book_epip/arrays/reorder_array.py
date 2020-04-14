@@ -49,7 +49,7 @@ def reorder(arr):
             arr[even], arr[odd] = arr[odd], arr[even]
             odd -= 1
 
-    return arr
+    # return arr
 
 arr = [8, 2, 5, 0, 6, 1]
 print(reorder(arr))
