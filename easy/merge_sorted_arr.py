@@ -25,6 +25,7 @@ def merge(nums1: [int], m: int, nums2: [int], n: int) -> None:
     p = m + n - 1
 
     while p1 >= 0 and p2 >= 0:
+        print(f"nums1 {nums1} p1:{nums1[p1]} || nums2 {nums2} p2:{nums2[p2]}")
         if nums1[p1] < nums2[p2]:
             nums1[p] = nums2[p2]
             p2 -= 1
@@ -38,7 +39,7 @@ def merge(nums1: [int], m: int, nums2: [int], n: int) -> None:
         p -= 1
     
     # adding missing elements from nums2
-    nums1[:p2 + 1] = nums2[:p2 + 1]
+    # nums1[:p2 + 1] = nums2[:p2 + 1]
 
 
         

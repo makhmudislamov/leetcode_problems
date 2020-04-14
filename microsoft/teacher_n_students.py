@@ -53,7 +53,7 @@ def assign(s, t):
         st_ind += 1 # moving to next student
         t_ind = 0 # resetting teacher ind
     return res
-
+``
 # Time and Space >> O(n*m), O(n+m) - res
 
 s = [1, 5, 8, 14, 56, 12, 0, 98, 3]
