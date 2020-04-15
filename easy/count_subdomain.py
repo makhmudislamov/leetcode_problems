@@ -29,7 +29,50 @@ Each address will have either 1 or 2 "." characters.
 The input count in any count-paired domain will not exceed 10000.
 The answer output can be returned in any order.
 """
-
+import re
 
 def subdomainVisits(cpdomains: [str]) -> [str]:
-    pass
+   #         init empty dict
+    #           init empty arr
+    #         add input dom, count to dict as key value pairs
+    #             loop over the input
+    #           break down the domain at "." after each breakdown add it to dict
+    #           loop over the dict
+    #           add "count value" formatted key values to output array
+    #           return array
+    cp_dict = {}
+    res = []
+
+    for combo in cpdomains:
+        
+        combo = re.split(' ', combo)
+        cp_dict[combo[1]] = int(combo[0])  # filled dict with input
+        # print(combo[1])
+        subdomain = re.split(r'\.', combo[1])
+        print(subdomain)
+
+        if len(subdomain) == 3:           
+            broken = subdomain[1]+ "." + subdomain[2]
+            if broken not in cp_dict:
+                cp_dict[broken] = int(combo[0])
+                cp_dict[subdomain[2]] = int(combo[0])
+            else:
+                cp_dict[broken] += 1
+        else:
+            broken = subdomain[1]
+            if broken not in cp_dict:
+                cp_dict[broken] = int(combo[0])
+            else:
+                cp_dict[broken] += int(combo[0])
+                cp_dict[broken] += 1
+
+    for d, c in cp_dict.items():
+        count = str(c)+" "+d
+        res.append(count)
+        print(res)
+    
+
+cpdomains = ["900 google.mail.com", "50 yahoo.com",
+             "1 intel.mail.com", "5 wiki.org"]
+
+print(subdomainVisits(cpdomains))
