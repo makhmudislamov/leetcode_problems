@@ -9,9 +9,7 @@ A = [0,0,1,2,2,1,1]
 or if i = 2, A[2] = 2
 A = [0,1,0,1,1,2,2] OR A = [0,0,1,1,1,2,2]
 """
-# approach 3 - O(n) time and const space
-# no nested loop and in single pass grouping elements smaller and larger
-
+# approach 4 - slight upgrade of approach 3 - single loop
 def dutch_flag(arr, pivot_index):
     # base cases
     if not arr:
@@ -19,27 +17,54 @@ def dutch_flag(arr, pivot_index):
     if pivot_index > len(arr) - 1:
         raise ValueError("Invalid Index")
     pivot = arr[pivot_index]
-    # grouping smaller elements
-    smaller = 0
-    for i in range(len(arr)):
-        if arr[i] < pivot:
-            arr[smaller], arr[i] = arr[i], arr[smaller]
-            smaller += 1
-            print(f"i {i}, smaller {smaller-1}. swapped {arr[i]} and {arr[smaller-1]} >> {arr}")
-    
-    print("*** GROUPING LARGER ELEMENTS***")
-    larger = len(arr) - 1
-    for i in reversed(range(len(arr))):
-        if arr[i] > pivot:
-            arr[i], arr[larger] = arr[larger], arr[i]
-            larger -= 1
-            print(
-                f"i {i}, larger {larger}. swapped {arr[i]} and {arr[larger]} >> {arr}")
 
+    smaller, equal, larger = 0, 0, len(arr) - 1
     print(arr)
-arr = [0,1,2,-3,5,2,1,7,5,9,10,1]
+    while equal <= larger:
+        if arr[equal] < pivot:
+            arr[equal], arr[smaller] = arr[smaller], arr[equal]
+            smaller += 1
+            equal += 1
+        elif arr[equal] == pivot:
+            equal += 1
+        else:
+            arr[equal], arr[larger] = arr[larger], arr[equal]
+            larger -= 1
+    
+    print(arr)
+
+
+arr = [0, 1, 2, -3, 5, 2, 1, 7, 5, 9, 10, 1]
 pivot_index = 4
 print(dutch_flag(arr, pivot_index))
+# approach 3 - O(n) time and const space
+# no nested loop and in single pass grouping elements smaller and larger
+
+# def dutch_flag(arr, pivot_index):
+#     # base cases
+#     if not arr:
+#         return arr
+    # if pivot_index > len(arr) - 1:
+    #     raise ValueError("Invalid Index")
+    # pivot = arr[pivot_index]
+    # # grouping smaller elements
+    # smaller = 0
+    # for i in range(len(arr)):
+    #     if arr[i] < pivot:
+    #         arr[smaller], arr[i] = arr[i], arr[smaller]
+    #         smaller += 1
+    #         print(f"i {i}, smaller {smaller-1}. swapped {arr[i]} and {arr[smaller-1]} >> {arr}")
+    
+    # print("*** GROUPING LARGER ELEMENTS***")
+    # larger = len(arr) - 1
+    # for i in reversed(range(len(arr))):
+    #     if arr[i] > pivot:
+    #         arr[i], arr[larger] = arr[larger], arr[i]
+    #         larger -= 1
+    #         print(
+    #             f"i {i}, larger {larger}. swapped {arr[i]} and {arr[larger]} >> {arr}")
+
+
 
 # Approach 2 - O(n**2) time and O(1) space
 # 2 stage iteration
