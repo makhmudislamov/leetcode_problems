@@ -19,5 +19,15 @@ Explanation: In this case, no transaction is done, i.e. max profit = 0.
 """
 
 
-def maxProfit(prices: List[int]) -> int:
+def maxProfit(prices: [int]):
+    # set some lower floor - inf
+    # iterate over the input
+    # substract each element from all next nums
+    # keep track of the biggest prices difference
+    # return the biggest difference
+    # NOTE: -num1-num2
     pass
+
+
+prices = [7, 1, 5, 3, 6, 4]
+print(maxProfit(prices))
