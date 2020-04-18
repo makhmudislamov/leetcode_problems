@@ -30,13 +30,26 @@ def maxProfit(prices: [int]):
     if len(prices) < 1:
         return 0
     max_profit = 0
+    # O(n**2) time and const time 
+    # for i in range(len(prices)-1):
+    #     for j in range(i+1, len(prices)):
+    #         # print("i and j are", prices[i], prices[j])
+    #         profit = prices[j]-prices[i]
+    #         if profit > max_profit:
+    #             max_profit = profit
 
-    for i in range(len(prices)-1):
-        for j in range(i+1, len(prices)):
-            # print("i and j are", prices[i], prices[j])
-            profit = prices[j]-prices[i]
-            if profit > max_profit:
-                max_profit = profit
+    # O(n) time and const space 
+    min_price = float("inf")
+    for i in range(len(prices)):
+        # print(f"prices[i] {prices[i]} min_price {min_price}")
+        if prices[i] < min_price:
+            min_price = prices[i]
+            # print(f"min price is {min_price}")
+        # print(
+            # f"prices[i] - min_price: {prices[i]} - {min_price} = {prices[i] - min_price}")
+        if prices[i] - min_price > max_profit:
+            max_profit = prices[i] - min_price
+            # print(f"max profit is {max_profit}")
 
     return max_profit
 
