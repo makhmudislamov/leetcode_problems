@@ -29,16 +29,16 @@ def maxProfit(prices: [int]):
     # NOTE: -num1-num2
     if len(prices) < 1:
         return 0
-    lower = float("-inf")
-    
-    for i in range(len(prices)):
+    max_profit = 0
+
+    for i in range(len(prices)-1):
         for j in range(i+1, len(prices)):
             # print("i and j are", prices[i], prices[j])
-            profit = -(prices[i]-prices[j])
-            if profit > lower:
-                lower = profit
-    
-    return 0 if lower <= 0 else lower
+            profit = prices[j]-prices[i]
+            if profit > max_profit:
+                max_profit = profit
+
+    return max_profit
 
 
 prices = [7, 1, 5, 3, 6, 4]
