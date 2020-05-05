@@ -9,7 +9,10 @@ Both num1 and num2 does not contain any leading zero.
 You must not use any built-in BigInteger library or convert the inputs to integer directly.
 """
 
-
-
-def addStrings(self, num1: str, num2: str) -> str:
-    pass
+def addStrings(num1: str, num2: str) -> str:
+    # iterate from left both nums
+    # convert each s to int
+    # add, if sum is > 9, leadin += 1 to next num
+    for i in reversed(range(len(num1))):
+        for j in reversed(range(len(num2))):
+            return str(int(i)+int(j))
