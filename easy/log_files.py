@@ -28,8 +28,7 @@ logs[i] is guaranteed to have an identifier, and a word after the identifier.
 
 
 
-def reorderLogFiles( logs: [str]) -> [str]:
-    pass
+def reorderLogFiles( logs: [str]):
 #   O(n) time and size solution (if output is not considered its O(1) size)
 #   create output arr size of input
 # have two pointers one from start and one from end
@@ -38,3 +37,23 @@ def reorderLogFiles( logs: [str]) -> [str]:
 # and when dig is found fill the output arr from the arr
 # increment/decrement two pointers
 # return output arr
+    res = [0] * len(logs)
+
+    start, end = 0, len(logs)-1
+
+    while start < end:
+        for s in logs:  
+            if s.split()[len(s.split())-1].isdigit():
+                res[end] = s
+                end -= 1
+            else:
+                res[start] = s
+                start += 1
+    return res
+
+
+
+logs = ["dig1 8 1 5 1", "let1 art can", "dig2 3 6",
+        "let2 own kit dig", "let3 art zero"]
+
+print(reorderLogFiles(logs))
