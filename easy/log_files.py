@@ -37,6 +37,9 @@ def reorderLogFiles( logs: [str]):
 # and when dig is found fill the output arr from the arr
 # increment/decrement two pointers
 # return output arr
+
+# corrections
+# itertate twice first fill with letter logs then digit logs to keep dig log order
     res = [0] * len(logs)
 
     start, end = 0, len(logs)-1
