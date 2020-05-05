@@ -30,3 +30,11 @@ logs[i] is guaranteed to have an identifier, and a word after the identifier.
 
 def reorderLogFiles( logs: [str]) -> [str]:
     pass
+#   O(n) time and size solution (if output is not considered its O(1) size)
+#   create output arr size of input
+# have two pointers one from start and one from end
+# iterate over the input
+# when let is found start filling the output arr from the end
+# and when dig is found fill the output arr from the arr
+# increment/decrement two pointers
+# return output arr
