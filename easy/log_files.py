@@ -40,22 +40,26 @@ def reorderLogFiles( logs: [str]):
 
 # corrections
 # itertate twice first fill with letter logs then digit logs to keep dig log order
-    res = [0] * len(logs)
+    # res = [0] * len(logs)
+    # start, end = 0, len(res)-1
+    # while start < end:
+    #     print(res)
+    #     for s in logs:  
+    #         if not s.split()[len(s.split())-1].isdigit():
+    #             res[start] = s
+    #             start += 1
+    #     for s in logs:
+    #         if s.split()[len(s.split())-1].isdigit():
+    #             res[start] = s
+    #             start += 1
+    # return res
 
-    start, end = 0, len(res)-1
-
-    while start < end:
-        print(res)
-        for s in logs:  
-            if not s.split()[len(s.split())-1].isdigit():
-                res[start] = s
-                start += 1
-        for s in logs:
-            if s.split()[len(s.split())-1].isdigit():
-                res[start] = s
-                start += 1
+    def f(log):
+        id_, rest = log.split(" ", 1)
+        print(rest[0])
+        return (0, rest, id_) if rest[0].isalpha() else (1,)
     
-    return res
+    return sorted(logs, key = f)
 
 
 
